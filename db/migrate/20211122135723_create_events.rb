@@ -5,7 +5,8 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :travel
       t.string :accomodation
       t.string :food
-      t.stringtechnician :category
+      t.string :category
+      t.string :technician
       t.string :rider
       t.string :driver
       t.references :user, null: false, foreign_key: true
