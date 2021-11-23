@@ -1,5 +1,23 @@
 <div class = container>
   <div>
     <h1> Upcoming Events </h1>
+    <div class = event_card>
+      <% @events.each do |event| %>
+        <div class = card_photo>
+          <% if event.photo.attached? %>
+            <%= cl_image_tag event.photo.key, height: 300, width: 500, crop: :fill %>
+          <% else %>
+            <%= image_tag "https://willicherleben.de/wp-content/uploads/2017/11/Event-Blogging-Strategies.jpg",
+              class: "default_event_pic", height: 150, width: 300 %>
+          <% end %>
+        </div>
+          <div class = one_card>
+            <h3><%= event.name %></h3>
+            <h4><%= event.address %></h4>
+            <h6><%= event.date %></h6>
+            <p><%= event.category %></p>
+          </div>
+      <% end %>
+    </div>
   </div>
 </div>
