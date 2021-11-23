@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <%= simple_form_for @event do |f| %>
+    <div class="form-inputs">
+      <div class="inline-input d-flex">
+        <%= f.input :name %>
+        <%= f.input :date %>
+        <%= f.input :category %>
+        <%= f.input :address %>
+      </div>
+    </div>
+    <div class="form-actions d-flex">
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, 'Create Event', class: "button" %>
+    </div>
+  <% end %>
+</div>
+
+
+    t.date "date"
+    t.string "travel"
+    t.string "accomodation"
+    t.string "food"
+    t.string "category"
+    t.string "technician"
+    t.string "rider"
+    t.string "driver"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "address"
