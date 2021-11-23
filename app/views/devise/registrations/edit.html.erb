@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= current_user.nick_name %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -9,7 +9,30 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
+    <%= f.input :name,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "BoB" } %>
+    <%= f.input :nick_name,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "DJ BoB" } %>
+    <%= f.input :role,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "artist" } %>
+    <%= f.input :address,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "Berlino" } %>
+    <%= f.input :rider,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "paracetamol" } %>
+    <%= f.input :details,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "I need a lot of water and a spoon" } %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -24,7 +47,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "button btn-primary" %>
   </div>
 <% end %>
 
