@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <%= simple_form_for @event do |f| %>
+    <div class="form-inputs">
+      <div class="inline-input d-flex">
+        <%= f.input :name %>
+        <%= f.input :date %>
+      </div>
+      <%= f.input :address %>
+      <%= f.input :category %>
+      <%= f.input :accomodation %>
+      <%= f.input :food %>
+      <%= f.input :technician %>
+      <%= f.input :rider %>
+      <%= f.input :driver %>
+    </div>
+
+    <div class="form-actions d-flex align-items-end">
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, 'Update your Event', class: "button" %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'back', event_path(@event) %>
