@@ -15,3 +15,16 @@
 <%= link_to "delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
 <br>
 <%= link_to 'back', events_path %>
+<hr>
+<%= link_to 'invite', event_invitations_path(@event) %>
+
+<div>
+  <%= simple_form_for([@event, @invitation]) do |f| %>
+  <div class=‘form-group’>
+
+  </div>
+  <div>
+    <%= f.button :submit, "invite", class: "button" %>
+  </div>
+</div>
+<% end %>
