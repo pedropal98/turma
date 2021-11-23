@@ -3,8 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
 // Define fonts for body and headers
-$body-font: 'Road Rage', "Work Sans", "Helvetica", "sans-serif",  'cursive';
-$headers-font: 'Yanone Kaffeesatz', "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Yanone Kaffeesatz', "Work Sans", "Helvetica", "sans-serif";
+$headers-font: 'Road Rage', "Nunito", "Helvetica", "sans-serif";
+
+$body-font-size: 1.125rem;
+$headers-font: 1.75rem;
+$large-headers: 2.25rem;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
