@@ -9,6 +9,9 @@ puts "Destroying old events"
 Event.destroy_all
 
 puts "Creating events"
+user = User.new(email: "pk@gmail.com", password: "1234567", name: "Philipp",
+                role: "mediocre")
+user.save!
 30.times do
   event = Event.new(
     name: Faker::Name.name,
