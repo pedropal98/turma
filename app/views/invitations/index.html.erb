@@ -17,8 +17,8 @@
       </p>
       <div>
         <% if invitation.status.nil? %>
-          <%= link_to "Approve", event_invitations_path(params[:event_id] ,invitation, status: true), method: :patch %>
-          <%= link_to "Decline", event_invitations_path(params[:event_id] ,invitation, status: false), method: :patch %>
+          <%= link_to "Approve", event_invitation_path(params[:event_id] , invitation, status: true), method: :patch %>
+          <%= link_to "Decline", event_invitation_path(params[:event_id] , invitation, status: false), method: :patch %>
         <% end %>
       </div>
     <% end %>

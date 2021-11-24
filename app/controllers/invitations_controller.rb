@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
     @invitation.user = User.find_by(name: params[:invitation][:user_id])
     if @invitation.save!
       flash[:alert] = "Reservation requested!"
-      redirect_to event_path(params[:event_id])
+      redirect_to event_invitations_path(params[:event_id])
     else
       flash[:alert] = "invitation failed"
     end
@@ -23,13 +23,13 @@ class InvitationsController < ApplicationController
 
   def update
     @invitation = Invitation.find(params[:id])
-    if params[:status] = "true"
+    if params[:status] == "true"
       status = true
     else
       status = false
     end
     @invitation.update(status: status)
-    redirect_to event_invitation_path(params[:event_id])
+    redirect_to event_invitations_path(params[:event_id])
   end
 
   private
