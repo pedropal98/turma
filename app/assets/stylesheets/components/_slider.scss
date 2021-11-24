@@ -1,4 +1,5 @@
 .slider {
+  margin-top: 0px;
   --border-size: 30px;
   display: inline-block;
   background-color: $background;
@@ -42,4 +43,10 @@
     color: rgba($main, 0.7);
 
   }
+}
+
+.sticky-slider {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 70px;
 }
