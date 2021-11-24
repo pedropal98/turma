@@ -1,10 +1,6 @@
 <div>
   <div>
-    <% if @event.photo.attached? %>
-      <%= @event.photo.key %>
-    <% else %>
-      <%= @event.photo %>
-    <% end %>
+    <%= @event.photo.key if @event.photo.attached? %>
   </div>
   <div>
     <h1><%= @event.date %></h1>
