@@ -18,25 +18,12 @@
   <%= link_to 'back', events_path %>
   <hr>
 
-
-  <br>
-
   <%# Write a simple form that creates an invitation, and has a dropdown of all the users
   Then we can implement select2 so that it has that filtering feature %>
 
-
-
-<%# <form action="/users" method="get">
-  <input type="text" name="user" placeholder="Who are you looking for?">
-  <input type="submit">
-</form> %>
-
-<%# <% @users.select do |user|%>
-<%# <% if %>
-
-
-<%= simple_form_for [@event, @invitation] do |f| %>
-  <%= f.text_field :user_id, label: 'Who are you looking for?', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :content, placeholder: 'text' %>
-  <%= f.button :submit %>
-<% end %>
+  <%= simple_form_for [@event, @invitation] do |f| %>
+    <%= f.text_field :user_id, label: 'Who are you looking for?', error: 'Username is mandatory, please specify one' %>
+    <%= f.input :content, placeholder: 'text' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

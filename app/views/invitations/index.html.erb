@@ -1,37 +1,26 @@
-<h1>invitations</h1>
+<div class="container">
+  <h1>invitations</h1>
 
-
-
-<div class="card-grid">
-  <% @invitations.each do |invitation| %>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <div class="card-info-header d-flex justify-content-between align-items-center">
-          <h2 class="mr-2"><span class="pink-2"><%= invitation.user.email %></span></h2>
-          <%= cl_image_tag invitation.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar-large avatar-bordered" %>
-        </div>
-        <p>from: <span class="date"><%= invitation.start_on.to_formatted_s(:long_ordinal) %></span></p>
-        <p>to: <span class="date"><%= invitation.end_on.to_formatted_s(:long_ordinal) %></span></p>
-        <div class="status d-flex justify-content-between align-items-center">
-          <p>Status:
-            <span>
-              <% if invitation.approved.nil? %>
-                <span class="panding">Pending</span>
-              <% elsif invitation.approved %>
-                <span class="approved">Approved</span>
-              <% else %>
-                <span class="declined">Declined</span>
-              <% end %>
-            </span>
-          </p>
-          <div class="control-links">
-            <% if invitation.approved.nil? %>
-              <%= link_to "Approve", event_invitation_path(params[:event_id] ,invitation, approved: true), method: :patch, class: "invitation-control approved" %>
-              <%= link_to "Decline", event_invitation_path(params[:event_id] ,invitation, approved: false), method: :patch, class: "invitation-control declined" %>
-            <% end %>
-          </div>
-        </div>
+  <div class="card-grid">
+    <% @invitations.each do |invitation| %>
+     <h2><%= invitation.user.name %></h2>
+      <p>Status:
+        <span>
+          <% if invitation.status.nil? %>
+            <span class="pending">Pending</span>
+          <% elsif invitation.status %>
+            <span class="status">Approved</span>
+          <% else %>
+            <span class="declined">Declined</span>
+          <% end %>
+        </span>
+      </p>
+      <div>
+        <% if invitation.status.nil? %>
+          <%= link_to "Approve", event_invitations_path(params[:event_id] ,invitation, status: true), method: :patch %>
+          <%= link_to "Decline", event_invitations_path(params[:event_id] ,invitation, status: false), method: :patch %>
+        <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
