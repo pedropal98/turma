@@ -16,9 +16,7 @@
   border-radius: 10px;
   position: relative;
 
-  &::before,
-  &::after {
-    content: '<';
+  & span {
     position: absolute;
     color: $background;
     font-size: $normal-headers;
@@ -27,14 +25,12 @@
     top: 0;
   }
 
-  &::before {
+  span.left {
     left: calc(var(--border-size) * -1);
-
   }
 
-  &::after {
+  span.right {
     right: calc(var(--border-size) * -1);
-    transform: rotate(180deg);
   }
 
 
