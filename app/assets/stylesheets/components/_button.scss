@@ -23,4 +23,8 @@
     color: rgba($main, 0.7);
 
   }
+
+  & + & {
+    margin-top: 0.5em;
+  }
 }
