@@ -1,4 +1,4 @@
-<h2>Edit <%= current_user.nick_name %></h2>
+<h2>Edit <%= current_user.nickname %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -13,7 +13,7 @@
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "BoB" } %>
-    <%= f.input :nick_name,
+    <%= f.input :nickname,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "DJ BoB" } %>
