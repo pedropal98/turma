@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Destroying old events"
 Event.destroy_all
+User.delete_all
 
 puts "Creating events"
-user = User.new(email: "pk@gmail.com", password: "1234567", name: "Philipp",
-                role: "mediocre")
+user = User.new(email: "pp@gmail.com", password: "1234567", name: "Philipp",
+                role: "artist")
 user.save!
 30.times do
   event = Event.new(
