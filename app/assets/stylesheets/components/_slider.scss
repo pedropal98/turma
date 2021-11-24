@@ -1,0 +1,49 @@
+.slider {
+  --border-size: 30px;
+  display: inline-block;
+  background-color: $background;
+  color: $main;
+  text-transform: uppercase;
+  font-size: $normal-headers;
+  font-weight: bold;
+  letter-spacing: 2px;
+  width: 100%;
+  padding: 0.8em 0;
+  text-align: center;
+  border: 2px solid $main;
+  border-right: var(--border-size) solid $main;
+  border-left: var(--border-size) solid $main;
+  border-radius: 10px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '<';
+    position: absolute;
+    color: $background;
+    font-size: $normal-headers;
+    cursor: pointer;
+    padding: 0.85em 0.3em;
+    top: 0;
+  }
+
+  &::before {
+    left: calc(var(--border-size) * -1);
+
+  }
+
+  &::after {
+    right: calc(var(--border-size) * -1);
+    transform: rotate(180deg);
+  }
+
+
+  &:hover {
+    text-decoration: none;
+    border: 2px solid rgba($main, 0.7);
+    border-right: var(--border-size) solid rgba($main, 0.7);
+    border-left: var(--border-size) solid rgba($main, 0.7);
+    color: rgba($main, 0.7);
+
+  }
+}
