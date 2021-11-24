@@ -1,6 +1,6 @@
 <div>
   <div>
-    <%= @event.photo.key %>
+    <%= @event.photo.key if @event.photo.attached? %>
   </div>
   <div>
     <h1><%= @event.date %></h1>
@@ -18,3 +18,23 @@
 <%= link_to "delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
 <br>
 <%= link_to 'back', events_path %>
+
+
+<div class="container chatroom">
+  <%= simple_form_for [@event, @message], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message ##{@event.name}" %>
+    <%= f.submit 'Send', class: "btn-primary" %>
+  <% end %>
+
+  <div class="messages">
+    <% @event.messages.each do |message| %>
+      <div id="message-<%= message.id %>">
+        <small>
+          <strong><%= message.user.nickname %></strong>
+          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
