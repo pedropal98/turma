@@ -1,23 +1,15 @@
-<div class = container>
+<div class="container">
+<div class="slider sticky-slider">
+  November 2021
+</div>
   <div>
-    <h1> Upcoming Events </h1>
-    <div class = event_card>
       <% @events.each do |event| %>
-        <div class = card_photo>
-          <% if event.photo.attached? %>
-            <%= cl_image_tag event.photo.key, height: 300, width: 500, crop: :fill %>
-          <% else %>
-            <%= image_tag "https://willicherleben.de/wp-content/uploads/2017/11/Event-Blogging-Strategies.jpg",
-              class: "default_event_pic", height: 150, width: 300 %>
-          <% end %>
-        </div>
-          <div class = one_card>
-            <h3><%= link_to "#{event.name}", event_path(event)%></h3>
-            <h4><%= event.address %></h4>
-            <h6><%= event.date %></h6>
-            <p><%= event.category %></p>
-          </div>
+          <div class="tab">
+          <%= link_to event_path(event) do %>
+              <h3><%= event.name %></h3>
+              <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
+          <%end%>
+            </div>
       <% end %>
     </div>
-  </div>
 </div>
