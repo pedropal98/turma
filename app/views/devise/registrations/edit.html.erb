@@ -10,37 +10,42 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
     <%= f.input :name,
+                placeholder: "Your name here",
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "BoB" } %>
     <%= f.input :nickname,
+                placeholder: "Your nickname here",
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "DJ BoB" } %>
-    <%= f.input :role,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "artist" } %>
+    <%= f.select :role, ['Artist', 'Venue']%>
     <%= f.input :address,
+                placeholder: "Your address info here",
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "Berlino" } %>
     <%= f.input :rider,
+                placeholder: "Your rider info here",
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "paracetamol" } %>
     <%= f.input :details,
+                placeholder: "Your details here",
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "I need a lot of water and a spoon" } %>
     <%= f.input :password,
+                placeholder: "Your password here",
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                placeholder: "Your password again here",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
+                placeholder: "Current password here",
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
