@@ -1,0 +1,14 @@
+.logo {
+
+
+  &.main > i {
+    color: $alert;
+    font-size: 4rem;
+  }
+
+  p {
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+  }
+}
