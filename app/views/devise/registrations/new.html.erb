@@ -5,31 +5,39 @@
 
   <div class="form-inputs">
     <%= f.input :email,
+                placeholder: "Your email here",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :name,
+                placeholder: "Your name here",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Bob" } %>
     <%= f.input :nickname,
+                placeholder: "Your nickname here",
                 required: false,
                 input_html: { autocomplete: "DJ Bob" } %>
-    <%= f.input :role, ['Artist', 'Venue'] %>
+    <%= f.select :role, ['Artist', 'Venue'] %>
     <%= f.input :rider,
+                placeholder: "Your rider info here",
                 required: false,
                 input_html: { autocomplete: "rider" } %>
     <%= f.input :details,
+                placeholder: "Your details here",
                 required: false,
                 input_html: { autocomplete: "whatever" } %>
     <%= f.input :address,
+                placeholder: "Your address here",
                 required: false,
                 input_html: { autocomplete: "Berlin" } %>
     <%= f.input :password,
+                placeholder: "Your wished password here",
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                placeholder: "Your password again here",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
