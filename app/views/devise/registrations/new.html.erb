@@ -15,9 +15,7 @@
     <%= f.input :nickname,
                 required: false,
                 input_html: { autocomplete: "DJ Bob" } %>
-    <%= f.input :role,
-                required: false,
-                input_html: { autocomplete: "artist or venue" } %>
+    <%= f.input :role, ['Artist', 'Venue'] %>
     <%= f.input :rider,
                 required: false,
                 input_html: { autocomplete: "rider" } %>
