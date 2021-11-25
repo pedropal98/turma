@@ -1,7 +1,38 @@
-.calender {
-  color: $main;
+.simple-calendar {
+  margin-top: 60px;
+  td {color: $main;}
+  th {color: $main; border: 0px !important;}
+  span {color: $main;}
+  a:hover {text-decoration: none; color: $main;}
+
+  .day { border: 0px;}
+
+  .day {font-size: 15px;}
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {background: $background !important;
+    border: solid;
+    border-color: $main;
+    border-radius: 50px;
+  }
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month {background: $background !important; color: rgba(255, 255, 255, 0.288);}
+  .current-month {}
+
+  .has-events {}
 }
 
-.calender td{
-  color: $main;
+.table {
+  border: 0px !important;
 }
