@@ -1,0 +1,10 @@
+.login {
+  margin-top: 3em;
+}
+
+.form-links {
+  & > a {
+    margin-inline: 1em;
+    margin-top: 2em;
+  }
+}
