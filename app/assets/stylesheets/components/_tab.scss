@@ -9,7 +9,8 @@
   padding: 0;
   border-block: 2px solid $main;
   border-radius: 10px;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  cursor: pointer;
 
   &:nth-of-type(2n) {
     border-right: 15px solid $main;
@@ -50,5 +51,13 @@
 
   &.notification {
     border-color: $alert;
+  }
+
+  &.open {
+    height: 400px;
+
+    span {
+      display: none;
+    }
   }
 }
