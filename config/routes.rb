@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get "dashboards", to: "dashboards#show"
   root to: 'pages#home'
   get "dashboards", to: "dashboards#show"
   resources :events do
