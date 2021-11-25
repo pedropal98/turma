@@ -1,15 +1,14 @@
-<div class="container">
 <div class="slider sticky-slider">
   November 2021
 </div>
-  <div>
-      <% @events.each do |event| %>
-          <div class="tab">
-          <%= link_to event_path(event) do %>
-              <h3><%= event.name %></h3>
-              <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
-          <%end%>
-            </div>
-      <% end %>
-    </div>
+<div>
+    <% @events.each do |event| %>
+        <div class="tab">
+        <%= link_to event_path(event) do %>
+            <h3><%= event.name %></h3>
+            <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
+        <%end%>
+          </div>
+    <% end %>
+  </div>
 </div>
