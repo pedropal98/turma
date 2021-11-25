@@ -1,0 +1,17 @@
+.signup {
+
+  .form-inputs {
+    & > * {
+      line-height: 0.7;
+    }
+  }
+
+  .form-links {
+    margin-top: -1em;
+  }
+
+  .role {
+    width: 35%;
+    padding: 0.2em;
+  }
+}
