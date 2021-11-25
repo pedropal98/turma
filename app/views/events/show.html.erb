@@ -1,50 +1,7 @@
-<div class="container">
-  <div>
-    <h1><%= @event.name %><h1>
-  </div>
-  <div>
-    <%= @event.photo.key if @event.photo.attached? %>
-  </div>
-  <div>
-    <h1><%= @event.date %></h1>
-    <p><%= @event.address %></p>
-  </div>
-
-<div style="width: 30%; height: 300px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class = "overview">
+  <%= render 'shared/overview'%>
 </div>
 
-  <%= link_to 'edit', edit_event_path %>
-  <br>
-  <%= link_to "delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
-  <br>
-  <%= link_to 'back', events_path %>
-  <div class="container">
-    <h3> Invitation </h3>
-    <%= simple_form_for [@event, @invitation] do |f| %>
-      <%= f.text_field :user_id, label: 'Who are you looking for?' %>
-      <%= f.input :content, placeholder: 'text' %>
-      <%= f.submit "invite" %>
-    <% end %>
-  </div>
-
-  <div class="container chatroom">
-  <%= simple_form_for [@event, @message], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@event.name}" %>
-    <%= f.submit 'Send', class: "btn-primary" %>
-  <% end %>
-
-  <div class="messages">
-    <% @event.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.user.nickname %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
-    <% end %>
-  </div>
+<div class = "chat">
+  <%= render 'shared/chat'%>
 </div>
