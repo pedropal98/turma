@@ -6,19 +6,14 @@ class InvitationsController < ApplicationController
   def create
     @invitation = Invitation.new(invitation_params)
     @invitation.event_id = params[:event_id]
-    @invitation.user = User.find_by(name: params[:invitation][:user_id])
-    if @invitation.save!
-      flash[:alert] = "Reservation requested!"
-      redirect_to event_invitations_path(params[:event_id])
+    if
+      @invitation.user = User.where("name ILIKE ?", "%#{params[:invitation][:user_id]}%").first
+      @invitation.save!
+      flash[:alert] = "Invitation requested!"
     else
       flash[:alert] = "invitation failed"
     end
-  end
-
-  def destroy
-    @invitation = Invitation.find(params[:id])
-    @invitation.destroy
-    redirect_to event_path
+    redirect_to event_path(params[:event_id])
   end
 
   def update
@@ -29,6 +24,12 @@ class InvitationsController < ApplicationController
       status = false
     end
     @invitation.update(status: status)
+    redirect_to event_path(params[:event_id])
+  end
+
+  def destroy
+    @invitation = Invitation.find(params[:id])
+    @invitation.destroy
     redirect_to event_path(params[:event_id])
   end
 

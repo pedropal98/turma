@@ -24,7 +24,7 @@
   <div class="container">
     <h3> Invitation </h3>
     <%= simple_form_for [@event, @invitation] do |f| %>
-      <%= f.text_field :user_id, label: 'Who are you looking for?' %>
+      <%= f.text_field :user_id, placeholder: 'Name' %>
       <%= f.input :content, placeholder: 'text' %>
       <%= f.submit "invite" %>
     <% end %>
