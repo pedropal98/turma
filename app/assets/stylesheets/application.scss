@@ -17,7 +17,14 @@
 
 body {
   background-color: $background;
-  min-height: 100vh;
+
+  .container {
+    min-height: 75vh;
+
+    @media (min-width: 1000px) {
+      width: 50% !important;
+    }
+  }
 }
 
 body h1{
