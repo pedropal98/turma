@@ -20,9 +20,9 @@
         <% if invitation.status.nil? %>
           <%= link_to "Approve", event_invitation_path(params[:event_id], invitation, status: true), method: :patch %>
           <%= link_to "Decline", event_invitation_path(params[:event_id], invitation, status: false), method: :patch %>
-          <%= link_to "Delete", event_invitation_path(params[:event_id], invitation), method: :delete %>
+          <%= link_to "Delete", event_path(params[:event_id], invitation), method: :delete %>
         <% else %>
-          <%= link_to "Delete", event_invitation_path(params[:event_id], invitation), method: :delete %>
+          <%= link_to "Delete", event_path(params[:event_id], invitation), method: :delete %>
         <% end %>
       </div>
     <% end %>

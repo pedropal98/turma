@@ -16,17 +16,6 @@ class InvitationsController < ApplicationController
     redirect_to event_path(params[:event_id])
   end
 
-  def update
-    @invitation = Invitation.find(params[:id])
-    if params[:status] == "true"
-      status = true
-    else
-      status = false
-    end
-    @invitation.update(status: status)
-    redirect_to event_path(params[:event_id])
-  end
-
   def destroy
     @invitation = Invitation.find(params[:id])
     @invitation.destroy
