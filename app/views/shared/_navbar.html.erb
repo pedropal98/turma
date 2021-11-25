@@ -1,6 +1,16 @@
 <div class="navbar-container sticky gradient">
-      <%= link_to destroy_user_session_path, method: :delete	do %>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
-      <i class="fas fa-search search-icon"></i>
+  <% if user_signed_in? %>
+    <% if current_user.photo.attached? %>
+      <div class = "avatar">
+        <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill %>
+      </div>
+    <% else %>
+      <div class = "avatar">
+        <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg",
+        height: 50, width: 50, crop: :fill %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <i class="fas fa-search search-icon"></i>
 </div>
