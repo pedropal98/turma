@@ -1,7 +1,13 @@
-<div class = "overview">
-  <%= render 'shared/overview'%>
-</div>
+<div class="event-show">
+  <div class="slider">
+    <h1><%= @event.name %><h1>
+  </div>
 
-<div class = "chat">
-  <%= render 'shared/chat'%>
+  <div class = "overview hidden">
+    <%= render 'shared/overview', :locals => { :event => @event } %>
+  </div>
+
+  <div class = "chat hidden">
+    <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
+  </div>
 </div>

@@ -1,10 +1,8 @@
-  <div class="container">
-    <div>
-      <h1><%= @event.name %><h1>
-    </div>
-    <div>
+
+
+
       <%= cl_image_tag @event.photo.key, height: 200, width: 400, crop: :fill %>
-    </div>
+
     <div>
       <h1><%= @event.date %></h1>
       <p><%= @event.address %></p>
