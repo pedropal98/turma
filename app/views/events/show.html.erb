@@ -20,10 +20,10 @@
 
   <%# Write a simple form that creates an invitation, and has a dropdown of all the users
   Then we can implement select2 so that it has that filtering feature %>
-
+<h3> Invitation </h3>
   <%= simple_form_for [@event, @invitation] do |f| %>
-    <%= f.text_field :user_id, label: 'Who are you looking for?', error: 'Username is mandatory, please specify one' %>
+    <%= f.text_field :user_id, label: 'Who are you looking for?' %>
     <%= f.input :content, placeholder: 'text' %>
-    <%= f.button :submit %>
+    <%= f.submit "invite" %>
   <% end %>
 </div>
