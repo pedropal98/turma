@@ -1,0 +1,15 @@
+<div class = 'dash_top'>
+  <div class = 'title'>
+    <h1>Hello <span class="pink"><%= current_user.name %></span>, we love you.</h1>
+  </div>
+
+  <div class="tabs">
+    <%= link_to "My events", dashboards_path(page: 'events') %>
+    <%= link_to "My invitationss", dashboards_path(page: 'invitations') %>
+  </div>
+
+  <div class="card-grid">
+    <%= render "#{params[:page]}.html.erb" %>
+  </div>
+
+</div>
