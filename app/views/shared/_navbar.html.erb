@@ -1,26 +1,9 @@
-<%# <div class="navbar-container sticky gradient">
-      <%= link_to destroy_user_session_path, method: :delete	do %>
-        <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
-      <%# <% end %>
-      <%# <i class="fas fa-search search-icon"></i> %>
-<%# </div> %>
-
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
-  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> %>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="nav-item dropdown">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-      <%= link_to "edit profile", "#", class: "dropdown-item" %>
-      <%= link_to "dashboard", "destroy_user_session_path", class: "dropdown-item" %>
-      <%= link_to "logout", "#", class: "dropdown-item" %>
-      </div>
-    </div>
+<div class="navbar-container sticky gradient">
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+    <%= link_to "edit profile", edit_user_registration_path, class: "dropdown-item" %>
+    <%= link_to "dashboard", dashboards_path, class: "dropdown-item" %>
+    <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   </div>
+  <i class="fas fa-search search-icon"></i>
 </div>
