@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="main-page">
+  <div class="logo main">
+    <i class="fas fa-cube"></i>
+    <p>Turma</p>
+  </div>
+
+
+  <p class="subheader">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti eligendi eos aperiam dolorem dignissimos sit enim voluptas a ipsum.</p>
+
+  <div class="buttons container">
+    <%= link_to "Log In", user_session_path, class: "button" %>
+    <%= link_to "Sign up", new_user_password_path, class: "button" %>
+
+  </div>
+</div>

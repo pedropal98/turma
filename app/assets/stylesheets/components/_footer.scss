@@ -1,0 +1,30 @@
+.footer-container {
+  height: 60px;
+  background-color: $background;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+   padding: 1.5em;
+}
+
+
+
+.logo {
+  color: $main;
+  font-size: 45px;
+  transform: translate(5px, -4px);
+}
+
+.add {
+  color: $main;
+  font-size: 25px;
+}
+
+.footer-container::before {
+  content: "";
+  width: 54px;
+}
