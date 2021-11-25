@@ -5,10 +5,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-
     @invitation = Invitation.new
     @message = Message.new
-    # @invitation = Invitation.new
     @markers = [{ lat: @event.latitude, lng: @event.longitude }]
   end
 
