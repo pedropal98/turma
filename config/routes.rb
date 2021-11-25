@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :events do
-    resources :invitations, only: [ :new, :create ]
+    resources :invitations, only: [:index, :create, :update ]
     resources :messages, only: :create
   end
   resources :invitations, only: [:destroy]
