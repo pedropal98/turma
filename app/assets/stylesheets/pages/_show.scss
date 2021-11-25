@@ -17,4 +17,15 @@
   .tab span{
     font-size: 1rem;
   }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .close-btn {
+    font-size: $normal-headers;
+    position: absolute;
+    right: 30px;
+
+  }
 }

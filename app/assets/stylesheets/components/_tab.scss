@@ -11,6 +11,8 @@
   border-radius: 10px;
   margin-bottom: 0.5em;
   cursor: pointer;
+  transition: all 400ms ease-in-out;
+  overflow: hidden;
 
   &:nth-of-type(2n) {
     border-right: 15px solid $main;
@@ -59,5 +61,11 @@
     span {
       display: none;
     }
+
+    transition: height 400ms ease-in-out;
   }
+}
+
+@keyframes open {
+
 }
