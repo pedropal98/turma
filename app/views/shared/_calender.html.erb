@@ -1,0 +1,14 @@
+<div class="slider sticky-slider">
+  November 2021
+</div>
+
+<%= month_calendar(events: @events, attribute: :date) do |date, events| %>
+  <%= date.day %>
+    <% events.each do |event| %>
+      <%= link_to event_path(event) do %>
+        <div class="event">
+              <p><%= event.name %></p>
+        </div>
+      <% end %>
+  <% end %>
+<% end %>
