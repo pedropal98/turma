@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['tab', 'close', 'content', 'form', 'messages'];
+  static targets = ['tab', 'close', 'content', 'form'];
 
 
 
@@ -12,7 +12,7 @@ export default class extends Controller {
       this.contentTarget.classList.remove("hidden");
     }, 500);
 
-    messagesTarget.scrollHeight;
+    console.log(formTarget);
 
   }
 
