@@ -12,9 +12,9 @@
     <div class="tab" data-chat-target="tab" data-action="click->chat#open">
       <h3>Chat</h3>
       <span>Sven, Rosa, Me...</span>
-    </div>
-    <div class = "chat hidden" data-chat-target="content" >
-      <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
+      <div class = "chat hidden" data-chat-target="content" >
+        <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
+      </div>
     </div>
   </div>
 
