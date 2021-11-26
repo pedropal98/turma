@@ -1,36 +1,55 @@
-<div class="event-show" data-controller="show">
+<div class="event-show" >
   <div class="slider mb-4">
     <h1><%= @event.name %><h1>
   </div>
-
-
-  <div class="wrapper">
-    <div class="close-btn mt-2 hidden" data-show-target="close" data-action="click->show#close">X</div>
-    <div class="tab" data-show-target="tab" data-action="click->show#open">
-        <h3>Chat</h3>
-        <span>Sven, Rosa, Me...</span>
-      <div class = "chat hidden" data-show-target="content" >
-        <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
-      </div>
-    </div>
-  </div>
-
-  <div class="tab">
-    <h3>Flight</h3><span></span>
-  </div>
-
-  <div class="tab">
-    <h3>Hotel</h3><span></span>
-  </div>
-
-  <div class="tab">
-    <h3>Driver</h3><span></span>
-  </div>
-
 
   <div class = "overview hidden">
     <%= render 'shared/overview', :locals => { :event => @event } %>
   </div>
 
+  <div class="wrapper" data-controller="chat">
+    <div class="close-btn mt-2 hidden" data-chat-target="close" data-action="click->chat#close">X</div>
+    <div class="tab" data-chat-target="tab" data-action="click->chat#open">
+      <h3>Chat</h3>
+      <span>Sven, Rosa, Me...</span>
+      <div class = "chat hidden" data-chat-target="content" >
+        <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
+      </div>
+    </div>
+  </div>
 
-</div>
+  <div class="wrapper" data-controller="flight">
+    <div class="close-btn mt-2 hidden" data-flight-target="close" data-action="click->flight#close">X</div>
+    <div class="tab" data-flight-target="tab" data-action="click->flight#open">
+      <div class="d-flex justify-content-between">
+        <h3>Flight</h3>
+      </div>
+      <div class = "flight hidden" data-flight-target="content" >
+        <%= render 'shared/flight', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper" data-controller="hotel">
+    <div class="close-btn mt-2 hidden" data-hotel-target="close" data-action="click->hotel#close">X</div>
+    <div class="tab" data-hotel-target="tab" data-action="click->hotel#open">
+      <div class="d-flex justify-content-between">
+        <h3>Hotel</h3>
+      </div>
+      <div class = "hotel hidden" data-hotel-target="content" >
+        <%= render 'shared/hotel', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper" data-controller="driver">
+    <div class="close-btn mt-2 hidden" data-driver-target="close" data-action="click->driver#close">X</div>
+    <div class="tab" data-target="tab" data-action="click->driver#open">
+      <div class="d-flex justify-content-between">
+        <h3>Driver</h3>
+      </div>
+      <div class = "driver hidden" data-driver-target="content" >
+        <%= render 'shared/driver', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
