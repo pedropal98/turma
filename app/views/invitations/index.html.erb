@@ -4,6 +4,7 @@
   <div class="card-grid">
     <% @invitations.each do |invitation| %>
      <h1><%= invitation.user.name %></h1>
+     <h1><%= invitation.content %></h1>
       <h1>Status:
         <span>
           <% if invitation.status.nil? %>
@@ -20,6 +21,7 @@
           <%= link_to "Approve", event_invitation_path(params[:event_id], invitation, status: true), method: :patch %>
           <%= link_to "Decline", event_invitation_path(params[:event_id], invitation, status: false), method: :patch %>
         <% end %>
+        <%= link_to "Delete", event_invitation_path(params[:event_id], invitation), method: :delete %>
       </div>
     <% end %>
   </div>
