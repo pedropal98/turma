@@ -1,13 +1,9 @@
   <div class="chatroom">
-    <div class="messages" id="scroll-bar">
+    <div class="messages"
+          data-controller="event-subscription"
+          data-event-subscription-chatroom-id-value="<%= @event.id %>">
       <% @event.messages.each do |message| %>
-        <div id="message-<%= message.id %>">
-          <small>
-            <strong><%= message.user.nickname %></strong>
-            <i class="time"><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-          </small>
-          <p><%= message.content %></p>
-        </div>
+        <%= render "messages/message", message: message %>
       <% end %>
     </div>
 
