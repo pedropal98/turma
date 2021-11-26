@@ -1,20 +1,14 @@
-<div class = 'chat'>
   <div class="chatroom">
-    <%= simple_form_for [@event, @message], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@event.name}" %>
-      <%= f.submit 'Send', class: "btn-primary" %>
-    <% end %>
-
-    <div class="messages">
+    <div class="messages"
+          data-controller="event-subscription"
+          data-event-subscription-chatroom-id-value="<%= @event.id %>">
       <% @event.messages.each do |message| %>
-        <div id="message-<%= message.id %>">
-          <small>
-            <strong><%= message.user.nickname %></strong>
-            <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-          </small>
-          <p><%= message.content %></p>
-        </div>
+        <%= render "messages/message", message: message %>
       <% end %>
     </div>
+
+    <%= simple_form_for [@event, @message], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message ##{@event.name}" %>
+      <%= f.submit 'Send', class: "btn-primary form-send" %>
+    <% end %>
   </div>
-</div>
