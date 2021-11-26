@@ -47,6 +47,7 @@
 
 .sticky-slider {
 	position: -webkit-sticky;
-	position: sticky;
+	position: static;
 	top: 70px;
+  z-index: 1;
 }
