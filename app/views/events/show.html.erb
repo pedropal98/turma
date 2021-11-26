@@ -1,17 +1,21 @@
-<div class="event-show" >
-  <div class="slider mb-4">
-    <h1><%= @event.name %><h1>
+<div class= "event-show" >
+  <div class= "slider mb-4">
+    <div data-controller="overview">
+      <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
+      <div data-overview-target="tab" data-action="click->overview#open">
+        <h1><%= @event.name %><h1>
+        <div class = "overview hidden" data-overview-target="content" >
+          <%= render 'shared/overview', :locals => { :event => @event } %>
+      </div>
+    </div>
   </div>
-
-  <div class = "overview hidden">
-    <%= render 'shared/overview', :locals => { :event => @event } %>
-  </div>
+</div>
 
   <div class="wrapper" data-controller="chat">
     <div class="close-btn mt-2 hidden" data-chat-target="close" data-action="click->chat#close">X</div>
     <div class="tab" data-chat-target="tab" data-action="click->chat#open">
       <h3>Chat</h3>
-      <span>Sven, Rosa, Me...</span>
+      <span>Pedro, Me...</span>
       <div class = "chat hidden" data-chat-target="content" >
         <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
       </div>
