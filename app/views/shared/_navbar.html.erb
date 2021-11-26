@@ -1,8 +1,9 @@
-<div class="navbar-container sticky gradient">
+<div class="navbar-container sticky">
  <% if user_signed_in? %>
     <% if current_user.photo.attached? %>
       <div class = "avatar" >
         <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      </div>
         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
           <%= link_to "edit profile", edit_user_registration_path, class: "dropdown-item" %>
           <%= link_to "dashboard", dashboards_path, class: "dropdown-item" %>

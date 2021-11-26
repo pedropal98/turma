@@ -1,0 +1,10 @@
+.dropdown-menu{
+  z-index: 2;
+  border-radius: 20%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-item{
+  color: $main;
+  letter-spacing: 4px;
+}
