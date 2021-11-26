@@ -7,8 +7,8 @@
       <% end %>
     </div>
 
-    <%= simple_form_for [@event, @message], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message ##{@event.name}" %>
+    <%= simple_form_for([@event, @message], data: { show_target: 'form' }, remote: true) do |f| %>
+      <%= f.input :content,  label: false, placeholder: "Message ##{@event.name}" %>
       <%= f.submit 'Send', class: "btn-primary form-send" %>
     <% end %>
   </div>
