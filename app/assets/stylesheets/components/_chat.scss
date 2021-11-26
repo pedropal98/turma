@@ -1,8 +1,62 @@
-.chatroom {
 
+
+.chatroom {
+  height: 350px;
   background-color: $background;
   border: none;
-  input{
+
+
+  input, #message_content {
     background-color: $background;
+    border: 0;
   }
+
+  #message_content {
+    height: 2.8rem;
+    width: 320px;
+    margin: -1em -1em;
+  }
+
+  .form-send {
+    background-color: $main;
+    color: $background;
+    font-size: 0.7em;
+    font-family: $headers-font;
+    border-radius: 100vh;
+    padding: 0.0 1em;
+  }
+
+
+
+  .simple_form {
+    height: 1rem;
+    position: relative;
+   }
+
+  .btn-primary {
+    border: 1px solid $alert;
+    position: absolute;
+    top: 7px;
+    right: 0;
+  }
+
+}
+
+.messages  {
+  line-height: 1;
+
+  & > * {
+    padding-bottom: 0.5em;
+    border-bottom: 0.5px solid rgba($main, 0.1);
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .time {
+    opacity: 0.3;
+  }
+
 }

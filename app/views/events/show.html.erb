@@ -5,11 +5,10 @@
 
 
   <div class="wrapper">
-    <div class="close-btn hidden" data-show-target="close" data-action="click->show#close">X</div>
+    <div class="close-btn mt-2 hidden" data-show-target="close" data-action="click->show#close">X</div>
     <div class="tab" data-show-target="tab" data-action="click->show#open">
-      <div class="d-flex justify-content-between">
-        <h3>Chat</h3><span>Sven, Rosa, Me...</span>
-      </div>
+        <h3>Chat</h3>
+        <span>Sven, Rosa, Me...</span>
       <div class = "chat hidden" data-show-target="content" >
         <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
       </div>

@@ -9,6 +9,7 @@ export default class extends Controller {
       this.closeTarget.classList.remove("hidden");
       this.contentTarget.classList.remove("hidden");
 
+
   }
 
   close() {
