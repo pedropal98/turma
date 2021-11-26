@@ -15,7 +15,8 @@
   border-right: var(--border-size) solid $main;
   border-left: var(--border-size) solid $main;
   border-radius: 10px;
-  position: relative;
+  position: static;
+  z-index: 1;
 
   & span {
     position: absolute;
@@ -47,7 +48,6 @@
 
 .sticky-slider {
 	position: -webkit-sticky;
-	position: static;
+	position: sticky;
 	top: 70px;
-  z-index: 1;
 }
