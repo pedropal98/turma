@@ -1,3 +1,4 @@
+
 .event-show {
   margin-top: 1em;
 
@@ -9,6 +10,22 @@
     font-size: 2rem;
     margin: 0;
 
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.2em;
+
+    &.open {
+      justify-content: flex-start;
+    }
+
+    span {
+      margin: 0;
+      align-self: flex-end;
+    }
   }
 
   .tab h3 {
