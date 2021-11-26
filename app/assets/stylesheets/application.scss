@@ -13,7 +13,7 @@
 @import "pages/index";
 
 @import 'mapbox-gl/dist/mapbox-gl';
-@import "simple_calendar";
+// @import "simple_calendar";
 
 body {
   background-color: $background;
@@ -22,7 +22,7 @@ body {
     min-height: 75vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
 
     @media (min-width: 1000px) {
       width: 50% !important;
@@ -37,4 +37,8 @@ body h1{
 a {
   text-decoration: none;
   color: $main;
+}
+
+.hidden {
+  display: none;
 }

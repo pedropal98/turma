@@ -1,5 +1,4 @@
 .simple-calendar {
-  margin-top: 60px;
   td {color: $main;}
   th {color: $main; border: 0px !important;}
   span {color: $main;}
@@ -26,7 +25,7 @@
 
   .start-date {}
 
-  .prev-month {}
+  .prev-month {background: $background !important; color: rgba(255, 255, 255, 0.288);}
   .next-month {background: $background !important; color: rgba(255, 255, 255, 0.288);}
   .current-month {}
 
@@ -34,5 +33,16 @@
 }
 
 .table {
+  margin-top: 70px;
   border: 0px !important;
+}
+
+.calender-title {
+  width: 100%;
+}
+
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
 }
