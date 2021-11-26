@@ -1,9 +1,9 @@
-<div class="footer-container sticky-bottom">
-  <%= link_to new_event_path do %>
-    <i class="fas fa-plus add"></i>
-  <% end %>
-  <%= link_to events_path do %>
-    <i class="fas fa-cube logo-footer" data-action="click->movie-card#revealContent"></i>
-  <% end %>
-
+<div>
+  <div class="footer-container sticky-bottom">
+    <%= link_to new_event_path do %>
+      <i class="fas fa-plus add"></i>
+    <% end %>
+      <i class="fas fa-cube logo-footer" data-calendar-target="open"  data-action="click->calendar#openCalendar"></i>
+      <i class="fas fa-cube logo-footer hidden" data-calendar-target="close" data-action="click->calendar#closeCalendar"></i>
+  </div>
 </div>
