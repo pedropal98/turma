@@ -11,7 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body data-controller="calendar">
     <%= render 'shared/navbar' if user_signed_in? %>
     <%= render 'shared/flashes' %>
     <div class="container">

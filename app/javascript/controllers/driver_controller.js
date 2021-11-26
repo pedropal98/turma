@@ -5,9 +5,9 @@ export default class extends Controller {
 
   open() {
 
-      this.tabTarget.classList.add("open");
-      this.closeTarget.classList.remove("hidden");
-      this.contentTarget.classList.remove("hidden");
+    this.tabTarget.classList.add("open");
+    this.closeTarget.classList.remove("hidden");
+    this.contentTarget.classList.remove("hidden");
 
   }
 

@@ -6,7 +6,7 @@
 
   .day { border: 0px;}
 
-  .day {font-size: 15px;}
+  .day p {font-size: 12px;}
   .wday-0 {}
   .wday-1 {}
   .wday-2 {}
@@ -35,6 +35,7 @@
 .table {
   margin-top: 20px;
   border: 0px !important;
+  height: 550px;
 }
 
 .calender-title {
