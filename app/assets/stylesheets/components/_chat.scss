@@ -6,6 +6,7 @@
   border: none;
 
 
+
   input, #message_content {
     background-color: $background;
     border: 0;
@@ -15,6 +16,7 @@
     height: 2.8rem;
     width: 320px;
     margin: -1em -1em;
+    color:rgba($main, 0.8)
   }
 
   .form-send {
@@ -34,7 +36,6 @@
    }
 
   .btn-primary {
-    border: 1px solid $alert;
     position: absolute;
     top: 7px;
     right: 0;

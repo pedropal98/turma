@@ -1,3 +1,12 @@
+<div class="slider sticky">
+  <div class="calendar-heading">
+    <div class="prev"><</div>
+    <div class="calendar-title">November 2021</div>
+    <div class="next">></div>
+  </div>
+</div>
+
+
 <% @events_month.each do |event| %>
     <div class="tab">
     <%= link_to event_path(event) do %>

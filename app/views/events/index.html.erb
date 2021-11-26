@@ -1,8 +1,8 @@
-<div class="calender">
-  <%= render 'shared/calender'%>
-</div>
-
-
-<div class="list  d-none">
-  <%= render 'shared/list'%>
+<div>
+  <div class="calender" data-calendar-target="calendarr">
+    <%= render 'shared/calender'%>
+  </div>
+  <div class="list hidden" data-calendar-target="list">
+    <%= render 'shared/list'%>
+  </div>
 </div>
