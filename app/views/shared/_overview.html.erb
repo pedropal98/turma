@@ -1,11 +1,8 @@
-    <div>
-      <h1><%= @event.name %><h1>
-    </div>
-    <div>
+    <div class = "justify-content-center">
       <% if @event.photo.attached? %>
-        <%= cl_image_tag @event.photo.key, height: 200, width: 400, crop: :fill %>
+        <%= cl_image_tag @event.photo.key, height: 150, width: 250, crop: :fill %>
       <% else %>
-        <%= image_tag "https://www.squeaker.net/image/event/event-placeholder-list.png", height: 200, width: 400, crop: :fill %>
+        <%= image_tag "https://www.squeaker.net/image/event/event-placeholder-list.png", height: 150, width: 250, crop: :fill %>
       <% end %>
     </div>
 
@@ -14,7 +11,7 @@
       <p><%= @event.address %></p>
     </div>
 
-  <div style="width: 100%; height: 300px;"
+  <div style="width: 100%; height: 200px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
