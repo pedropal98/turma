@@ -4,10 +4,11 @@
         data-event-subscription-event-id-value="<%= @event.id %>"
         data-chatroom-target="messages">
     <% @event.messages.reverse.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <%# viewName = message.user == current_user %>
+      <%= render :partial => 'messages/message', :locals => { message: message } %>
     <% end %>
 
-
+  <%# WHY CAN'T I PASS viewName as variable? %>
   </div>
 
   <%= simple_form_for([@event, @message], remote: true, data: { chatroom_target: 'formSubmit', action: 'submit->chatroom#submit' }) do |f| %>
