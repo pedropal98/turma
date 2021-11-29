@@ -6,8 +6,6 @@ export default class extends Controller {
   submit() {
     setTimeout(() => {
 
-      console.log(this.element);
-      console.log(this.formSubmitTarget);
       this.formSubmitTarget.reset();
     }, 300);
   }
