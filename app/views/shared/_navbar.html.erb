@@ -1,20 +1,25 @@
 <div class="navbar-container sticky">
- <% if user_signed_in? %>
-
-
-
-      <div class = "avatar">
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 50, width: 50, crop: :fill %>
-        <% else %>
-          <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 50, width: 50, crop: :fill %>
-        <% end %>
-        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-          <%= link_to "edit profile", edit_user_registration_path, class: "dropdown-item" %>
-          <%= link_to "dashboard", dashboards_path, class: "dropdown-item" %>
-          <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
+  <% if user_signed_in? %>
+    <div class = "avatar">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 50, width: 50, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 50, width: 50, crop: :fill %>
+      <% end %>
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+        <%= link_to "edit profile", edit_user_registration_path, class: "dropdown-item" %>
+        <%= link_to "dashboard", dashboards_path, class: "dropdown-item" %>
+        <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
+    </div>
   <% end %>
   <i class="fas fa-search search-icon"></i>
+    <%= form_tag events_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find event"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
 </div>
