@@ -1,23 +1,28 @@
-  <% @reservations.each do |reservation| %>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <div class="card-info-header d-flex justify-content-between align-items-center">
-          <h2 class="mr-2"><span class="pink-2"><%= reservation.studio.name %></span></h2>
-          <p>at <%= reservation.studio.address %></p>
-        </div>
-        <p>from: <span class="date"><%= reservation.start_on.to_formatted_s(:long_ordinal) %></span></p>
-        <p>to: <span class="date"><%= reservation.end_on.to_formatted_s(:long_ordinal) %></span></p>
-        <p>Status:
-            <span>
-              <% if reservation.approved.nil? %>
-                <span class="panding">Pending</span>
-              <% elsif reservation.approved %>
-                <span class="approved">Approved</span>
-              <% else %>
-                <span class="declined">Declined</span>
-              <% end %>
-            </span>
-          </p>
+<div class="container">
+  <h1>invitations</h1>
+
+  <div class="card-grid">
+    <% @invitations.each do |invitation| %>
+     <h1><%= invitation.event.name %></h1>
+     <h1><%= invitation.content %></h1>
+      <h1>Status:
+        <span>
+          <% if invitation.status.nil? %>
+            <span class="pending">Pending</span>
+          <% elsif invitation.status %>
+            <span class="status">Approved</span>
+          <% else %>
+            <span class="declined">Declined</span>
+          <% end %>
+        </span>
+      </h1>
+      <div>
+        <% if invitation.status.nil? %>
+          <%= link_to "Approve", event_invitation_path(params[:event_id], invitation, status: true), method: :patch %>
+          <%= link_to "Decline", event_invitation_path(params[:event_id], invitation, status: false), method: :patch %>
+        <% end %>
+        <%= link_to "Delete", event_invitation_path(params[:event_id], invitation), method: :delete %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+</div>

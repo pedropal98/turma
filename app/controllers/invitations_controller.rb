@@ -29,7 +29,7 @@ class InvitationsController < ApplicationController
   def destroy
     @invitation = Invitation.find(params[:id])
     @invitation.destroy
-    redirect_to events_path
+    redirect_to event_path(params[:event_id])
   end
 
   private
