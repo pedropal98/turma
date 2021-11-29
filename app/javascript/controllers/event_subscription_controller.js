@@ -13,7 +13,5 @@ export default class extends Controller {
 
   }
 
-  disconnect() {
-    this.channel.unsubscribe()
-  }
+
 }
