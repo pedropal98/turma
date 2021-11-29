@@ -22,6 +22,7 @@
     </div>
   </div>
 
+<% unless @event.travel.nil? ||  @event.travel.empty? %>
   <div class="wrapper" data-controller="flight">
     <div class="close-btn mt-2 hidden" data-flight-target="close" data-action="click->flight#close">X</div>
     <div class="tab" data-flight-target="tab" data-action="click->flight#open">
@@ -33,7 +34,9 @@
       </div>
     </div>
   </div>
+<% end %>
 
+<% unless @event.accomodation.nil? ||  @event.accomodation.empty?  %>
   <div class="wrapper" data-controller="hotel">
     <div class="close-btn mt-2 hidden" data-hotel-target="close" data-action="click->hotel#close">X</div>
     <div class="tab" data-hotel-target="tab" data-action="click->hotel#open">
@@ -45,10 +48,12 @@
       </div>
     </div>
   </div>
+<% end %>
 
+<% unless @event.driver.nil? ||  @event.driver.empty?  %>
   <div class="wrapper" data-controller="driver">
     <div class="close-btn mt-2 hidden" data-driver-target="close" data-action="click->driver#close">X</div>
-    <div class="tab" data-target="tab" data-action="click->driver#open">
+    <div class="tab" data-driver-target="tab" data-action="click->driver#open">
       <div class="d-flex justify-content-between">
         <h3>Driver</h3>
       </div>
@@ -57,3 +62,4 @@
       </div>
     </div>
   </div>
+<% end %>
