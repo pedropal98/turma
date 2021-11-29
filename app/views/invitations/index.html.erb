@@ -1,7 +1,7 @@
 <div class="container">
   <h1>invitations</h1>
 
-  <div class="card-grid">
+  <div class="card-grid tab">
     <% @invitations.each do |invitation| %>
       <h1><%= invitation.event.user.name %></h1>
       <h1><%= invitation.event.name %></h1>

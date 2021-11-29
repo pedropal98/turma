@@ -23,13 +23,13 @@ class InvitationsController < ApplicationController
       status = false
     end
     @invitation.update(status: status)
-    redirect_to event_path(params[:event_id])
+    redirect_to dashboards_path
   end
 
   def destroy
     @invitation = Invitation.find(params[:id])
     @invitation.destroy
-    redirect_to event_path(params[:event_id])
+    redirect_to dashboards_path
   end
 
   private
