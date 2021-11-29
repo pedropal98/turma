@@ -5,7 +5,7 @@
       <div data-overview-target="tab" data-action="click->overview#open">
         <h1><%= @event.name %><h1>
         <div class = "overview hidden" data-overview-target="content" >
-          <%= render 'shared/overview', :locals => { :event => @event } %>
+          <%= render 'shared/overview-venue', :locals => { :event => @event } %>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <div class="close-btn mt-2 hidden" data-chat-target="close" data-action="click->chat#close">X</div>
     <div class="tab" data-chat-target="tab" data-action="click->chat#open">
       <h3>Chat</h3>
-      <span>Pedro, Me...</span>
+      <span><%= @event.user.name %> & <%= current_user.name %> </span>
       <div class = "chat hidden" data-chat-target="content" >
         <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
       </div>
@@ -53,12 +53,55 @@
 <% unless @event.driver.nil? ||  @event.driver.empty?  %>
   <div class="wrapper" data-controller="driver">
     <div class="close-btn mt-2 hidden" data-driver-target="close" data-action="click->driver#close">X</div>
-    <div class="tab" data-target="tab" data-action="click->driver#open">
+    <div class="tab" data-driver-target="tab" data-action="click->driver#open">
       <div class="d-flex justify-content-between">
         <h3>Driver</h3>
       </div>
       <div class = "driver hidden" data-driver-target="content" >
         <%= render 'shared/driver', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% unless @event.food.nil? ||  @event.food.empty?  %>
+  <div class="wrapper" data-controller="food">
+    <div class="close-btn mt-2 hidden" data-food-target="close" data-action="click->food#close">X</div>
+    <div class="tab" data-food-target="tab" data-action="click->food#open">
+      <div class="d-flex justify-content-between">
+        <h3>Food</h3>
+      </div>
+      <div class = "food hidden" data-food-target="content" >
+        <%= render 'shared/food', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% unless @event.rider.nil? ||  @event.rider.empty?  %>
+  <div class="wrapper" data-controller="rider">
+    <div class="close-btn mt-2 hidden" data-rider-target="close" data-action="click->rider#close">X</div>
+    <div class="tab" data-rider-target="tab" data-action="click->rider#open">
+      <div class="d-flex justify-content-between">
+        <h3>Rider</h3>
+      </div>
+      <div class = "rider hidden" data-rider-target="content" >
+        <%= render 'shared/rider', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<% unless @event.technician.nil? ||  @event.technician.empty?  %>
+  <div class="wrapper" data-controller="technician">
+    <div class="close-btn mt-2 hidden" data-technician-target="close" data-action="click->technician#close">X</div>
+    <div class="tab" data-technician-target="tab" data-action="click->technician#open">
+      <div class="d-flex justify-content-between">
+        <h3>Technician</h3>
+      </div>
+      <div class = "technician hidden" data-technician-target="content" >
+        <%= render 'shared/technician', :locals => { :event => @event } %>
       </div>
     </div>
   </div>
