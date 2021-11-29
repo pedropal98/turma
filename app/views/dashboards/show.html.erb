@@ -8,28 +8,44 @@
     <%= link_to "My invitations", invitations_path(page: 'invitations') %>
   </div>
 
-
-  <div>
-    <div>
-      <h1>Your events</h1>
-      <div>
-        <%= render 'event' %>
+<div class= "event-show" >
+  <div class= "slider mb-4">
+    <div data-controller="overview">
+      <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
+      <div data-overview-target="tab" data-action="click->overview#open">
+        <h1><%= "Edit profile" %><h1>
+        <div class = "overview hidden" data-overview-target="content" >
+          <%= render :template => 'devise/registrations/edit',
+                        :locals => {
+                          :resource => current_user,
+                          :resource_name => 'User' } %>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<%# <% unless @event.nil? ||  @event.empty?  %>
+  <div class="wrapper" data-controller="overview">
+    <div class="close-btn mt-2 hidden" data-food-target="close" data-action="click->overview#close">X</div>
+    <div class="tab" data-food-target="tab" data-action="click->overview#open">
+      <div class="d-flex justify-content-between">
+        <h3>Your events</h3>
+      </div>
+      <div class = "overview hidden" data-food-target="content" >
+        <%= render 'event', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
+<%# <% end %>
+
+
+
     <hr>
     <div>
       <h1>Your invitations</h1>
       <div>
         <%= render 'invitation' %>
-      </div>
-    </div>
-    <div>
-      <h1>Edit profile</h1>
-      <div>
-        <%= render :template => 'devise/registrations/edit',
-                        :locals => {
-                          :resource => current_user,
-                          :resource_name => 'User' } %>
       </div>
     </div>
   </div>
