@@ -8,6 +8,11 @@
     <%= link_to "My invitations", invitations_path(page: 'invitations') %>
   </div>
 
+  <div>
+    <% @events.each do |event| %>
+      <h1><%= event.name %></h1>
+    <% end %>
+  </div>
   <%# <div class="card-grid">
     <%= render "#{params[:page]}.html.erb" %>
   <%# </div> %>
