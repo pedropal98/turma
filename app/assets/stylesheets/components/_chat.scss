@@ -5,6 +5,11 @@
   background-color: $background;
   border: none;
 
+  .name {
+    color: $alert;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 
 
 
@@ -48,23 +53,25 @@
 }
 
 .messages  {
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
+  line-height: 1.2;
+  padding: 0;
   height: 100%;
+  overflow: scroll;
+  padding: 0 0.5em 0.7em;
+
 
   & > * {
-    padding-bottom: 0.5em;
-    border-bottom: 0.5px solid rgba($main, 0.1);
+    border-bottom: 0.5px solid rgba($main, 0.2);
   }
 
   p {
     font-size: 1rem;
-    margin: 0;
+    margin-bottom: 0.3em;
+    margin-inline: 1em;
   }
 
   .time {
-    opacity: 0.3;
+    opacity: 0.5;
   }
 
 }
