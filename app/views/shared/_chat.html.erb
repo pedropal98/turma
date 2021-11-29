@@ -1,17 +1,17 @@
-<div class="chatroom">
+<div class="chatroom" data-controller="chatroom">
   <div class="messages"
         data-controller="event-subscription"
         data-event-subscription-event-id-value="<%= @event.id %>"
         data-chatroom-target="messages">
-    <% @event.messages.each do |message| %>
+    <% @event.messages.reverse.each do |message| %>
       <%= render "messages/message", message: message %>
     <% end %>
 
 
   </div>
 
-  <%= simple_form_for [@event, @message], remote: true do |f| %>
-    <%= f.input :content,  label: false,  placeholder: "Message ##{@event.name}" %>
+  <%= simple_form_for([@event, @message], remote: true, data: { chatroom_target: 'formSubmit', action: 'submit->chatroom#submit' }) do |f| %>
+    <%= f.input :content,  label: false,  placeholder: "Message ##{@event.name}", autofocus: true %>
     <%= f.submit 'Send', class: "btn-primary form-send" %>
   <% end %>
 </div>

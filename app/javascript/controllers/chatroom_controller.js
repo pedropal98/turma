@@ -1,12 +1,15 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['messages'];
+  static targets = ['formSubmit'];
 
-  connect() {
-    console.log(this.element);
-    console.log(this.messagesTarget);
+  submit() {
+    setTimeout(() => {
 
+      console.log(this.element);
+      console.log(this.formSubmitTarget);
+      this.formSubmitTarget.reset();
+    }, 300);
   }
 
 }

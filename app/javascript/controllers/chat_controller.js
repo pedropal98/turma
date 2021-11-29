@@ -10,7 +10,8 @@ export default class extends Controller {
       this.contentTarget.classList.remove("hidden");
     }, 500);
 
-
+    // Add autofocus to foem
+    // Scroll to last message
 
   }
 
