@@ -68,6 +68,16 @@
 
     transition: height 400ms ease-in-out;
   }
+
+  a {
+    color: $main;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $main;
+    text-decoration: none;
+  }
 }
 
 @keyframes open {
