@@ -1,6 +1,15 @@
-<div id="message-<%= message.id %>">
+<% if message.user != current_user %>
+  <% name = message.user.name || message.user.nickname %>
+  <% dir = "text-left" %>
+<% else %>
+  <% name = "" %>
+  <% dir = "text-right" %>
+
+<% end %>
+
+<div class="<%= dir %>" id="message-<%= message.id %>">
   <small>
-    <strong><%= message.user.nickname %></strong>
+    <strong class="name"><%= name %></strong>
     <i class="time"><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
   <p><%= message.content %></p>
