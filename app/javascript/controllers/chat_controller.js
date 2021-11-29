@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['tab', 'close', 'content', 'form', 'messages'];
+  static targets = ['tab', 'close', 'content', 'form'];
 
   open() {
     this.tabTarget.classList.add("open");
@@ -9,6 +9,9 @@ export default class extends Controller {
       this.closeTarget.classList.remove("hidden");
       this.contentTarget.classList.remove("hidden");
     }, 500);
+
+    console.log(formTarget);
+
   }
 
   close() {
