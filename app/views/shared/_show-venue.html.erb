@@ -22,57 +22,15 @@
     </div>
   </div>
 
-<% unless @event.travel.nil? ||  @event.travel.empty? %>
-  <div class="wrapper" data-controller="flight">
-    <div class="close-btn mt-2 hidden" data-flight-target="close" data-action="click->flight#close">X</div>
-    <div class="tab" data-flight-target="tab" data-action="click->flight#open">
+<% unless @event.performers.nil? ||  @event.performers.empty?  %>
+  <div class="wrapper" data-controller="performers">
+    <div class="close-btn mt-2 hidden" data-performers-target="close" data-action="click->performers#close">X</div>
+    <div class="tab" data-performers-target="tab" data-action="click->performers#open">
       <div class="d-flex justify-content-between">
-        <h3>Flight</h3>
+        <h3>Performers</h3>
       </div>
-      <div class = "flight hidden" data-flight-target="content" >
-        <%= render 'shared/flight', :locals => { :event => @event } %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<% unless @event.accomodation.nil? ||  @event.accomodation.empty?  %>
-  <div class="wrapper" data-controller="hotel">
-    <div class="close-btn mt-2 hidden" data-hotel-target="close" data-action="click->hotel#close">X</div>
-    <div class="tab" data-hotel-target="tab" data-action="click->hotel#open">
-      <div class="d-flex justify-content-between">
-        <h3>Hotel</h3>
-      </div>
-      <div class = "hotel hidden" data-hotel-target="content" >
-        <%= render 'shared/hotel', :locals => { :event => @event } %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<% unless @event.driver.nil? ||  @event.driver.empty?  %>
-  <div class="wrapper" data-controller="driver">
-    <div class="close-btn mt-2 hidden" data-driver-target="close" data-action="click->driver#close">X</div>
-    <div class="tab" data-driver-target="tab" data-action="click->driver#open">
-      <div class="d-flex justify-content-between">
-        <h3>Driver</h3>
-      </div>
-      <div class = "driver hidden" data-driver-target="content" >
-        <%= render 'shared/driver', :locals => { :event => @event } %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<% unless @event.food.nil? ||  @event.food.empty?  %>
-  <div class="wrapper" data-controller="food">
-    <div class="close-btn mt-2 hidden" data-food-target="close" data-action="click->food#close">X</div>
-    <div class="tab" data-food-target="tab" data-action="click->food#open">
-      <div class="d-flex justify-content-between">
-        <h3>Food</h3>
-      </div>
-      <div class = "food hidden" data-food-target="content" >
-        <%= render 'shared/food', :locals => { :event => @event } %>
+      <div class = "performers hidden" data-performers-target="content" >
+        <%= render 'shared/performers', :locals => { :event => @event } %>
       </div>
     </div>
   </div>
@@ -87,21 +45,6 @@
       </div>
       <div class = "rider hidden" data-rider-target="content" >
         <%= render 'shared/rider', :locals => { :event => @event } %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-
-<% unless @event.technician.nil? ||  @event.technician.empty?  %>
-  <div class="wrapper" data-controller="technician">
-    <div class="close-btn mt-2 hidden" data-technician-target="close" data-action="click->technician#close">X</div>
-    <div class="tab" data-technician-target="tab" data-action="click->technician#open">
-      <div class="d-flex justify-content-between">
-        <h3>Technician</h3>
-      </div>
-      <div class = "technician hidden" data-technician-target="content" >
-        <%= render 'shared/technician', :locals => { :event => @event } %>
       </div>
     </div>
   </div>

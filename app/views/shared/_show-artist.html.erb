@@ -27,7 +27,7 @@
     <div class="close-btn mt-2 hidden" data-flight-target="close" data-action="click->flight#close">X</div>
     <div class="tab" data-flight-target="tab" data-action="click->flight#open">
       <div class="d-flex justify-content-between">
-        <h3>Flight</h3>
+        <h3>Travel</h3>
       </div>
       <div class = "flight hidden" data-flight-target="content" >
         <%= render 'shared/flight', :locals => { :event => @event } %>
@@ -41,7 +41,7 @@
     <div class="close-btn mt-2 hidden" data-hotel-target="close" data-action="click->hotel#close">X</div>
     <div class="tab" data-hotel-target="tab" data-action="click->hotel#open">
       <div class="d-flex justify-content-between">
-        <h3>Hotel</h3>
+        <h3>Accomodation</h3>
       </div>
       <div class = "hotel hidden" data-hotel-target="content" >
         <%= render 'shared/hotel', :locals => { :event => @event } %>
