@@ -2,13 +2,20 @@ import { Controller } from "stimulus";
 import consumer from "../channels/consumer";
 
 export default class extends Controller {
-  static values = { chatroomId: Number }
+  static values = { eventId: Number }
+  static targets = ['form']
 
   connect() {
     this.channel = consumer.subscriptions.create(
-      { channel: "ChatroomChannel", id: this.chatroomIdValue },
-      { received: data => console.log(data) }
+      { channel: "EventChannel", id: this.eventIdValue },
+      { received: data => this.element.insertAdjacentHTML("beforeend", data) },
+      //  console.log(formTarget)
+
+
     )
-    console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`);
+  }
+
+  disconnect() {
+    this.channel.unsubscribe()
   }
 }
