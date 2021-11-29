@@ -15,9 +15,16 @@
 	top: 0px;
 }
 
+.search {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
 .search-icon {
   color: $main;
   font-size: 20px;
+  margin: 10px 15px;
 }
 
 .navbar-container::after {
