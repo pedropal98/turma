@@ -9,11 +9,29 @@
   </div>
 
   <div>
-    <% @events.each do |event| %>
-      <h1><%= event.name %></h1>
-    <% end %>
+    <div>
+      <h1>Your events:</h1>
+      <% @events.each do |event| %>
+        <h1><%= event.name %></h1>
+      <% end %>
+    </div>
+    <hr>
+    <div>
+      <h1>Your invitations:</h1>
+      <% @invitations.each do |invitation| %>
+        <% if invitation.status == true %>
+        <h1><%= invitation.event.name %></h1>
+        <% end%>
+      <% end %>
+    </div>
+
   </div>
-  <%# <div class="card-grid">
+
+  <%# <div>
+    <%= render 'invitations/index' %>
+  <%# </div> %>
+
+  <%# <div class="">
     <%= render "#{params[:page]}.html.erb" %>
   <%# </div> %>
 
