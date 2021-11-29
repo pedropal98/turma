@@ -12,14 +12,15 @@
 @import "components/index";
 @import "pages/index";
 
+
 @import 'mapbox-gl/dist/mapbox-gl';
-@import "simple_calendar";
+
 
 body {
   background-color: $background;
 
   .container {
-    min-height: 75vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: start;
