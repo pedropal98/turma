@@ -3,6 +3,7 @@ class EventsController < ApplicationController
     @events = Event.all
     start_date = params.fetch(:date, Date.today).to_date
     @events_month = Event.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+
   end
 
   def show
@@ -45,6 +46,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:travel, :date, :accomodation, :food, :category, :technician, :rider, :driver, :name, :address, :photo)
+    params.require(:event).permit(:travel, :date, :accomodation, :food, :category, :technician, :rider, :driver, :name, :address, :photo, :performers)
   end
 end
