@@ -1,6 +1,6 @@
 <div>
   <div class = 'title'>
-    <h1>Hello <span class="pink"><%= current_user.name %></span>, we love you.</h1>
+    <h1>Hello <span><%= current_user.name %></span>, we love you.</h1>
   </div>
 
   <div class="tabs">
@@ -9,36 +9,17 @@
   </div>
 </div>
 
-<div class= "event-show" >
-  <div class= "slider mb-4">
-    <div data-controller="overview">
-      <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
-      <div data-overview-target="tab" data-action="click->overview#open">
-        <h1><%= "Edit profile" %><h1>
-        <div class = "overview hidden" data-overview-target="content" >
-          <%= render :template => 'devise/registrations/edit',
-                        :locals => {
-                          :resource => current_user,
-                          :resource_name => 'User' } %>
-        </div>
-      </div>
-    </div>
+<div>
+  <div class="calender" data-calendar-target="calendarr">
+      <%= render 'dashboards/invitation' %>
   </div>
-
-    <div class="wrapper" data-controller="dashboard-event">
-      <div class="close-btn mt-2 hidden" data-dashboard-event-target="close" data-action="click->dashboard-event#close">X</div>
-      <div class="tab" data-dashboard-event-target="tab" data-action="click->dashboard-event#open">
-        <div class="d-flex justify-content-between">
-          <h3>Your events</h3>
-        </div>
-        <div class = "dashboard-event hidden" data-dashboard-event-target="content" >
-          <%= render 'dashboards/event', :locals => { :event => @event } %>
-        </div>
-      </div>
-    </div>
+  <div class="list hidden" data-calendar-target="list">
+      <%= render 'dashboards/invitation'%>
+  </div>
+</div>
 
 
-  <div class="wrapper" data-controller="dashboard-invitation">
+  <%# <div class="wrapper" data-controller="dashboard-invitation">
     <div class="close-btn mt-2 hidden" data-dashboard-invitation-target="close" data-action="click->dashboard-invitation#close">X</div>
     <div class="tab" data-dashboard-invitation-target="tab" data-action="click->dashboard-invitation#open">
       <div class="d-flex justify-content-between">
@@ -46,7 +27,7 @@
       </div>
       <div class = "dashboard-invitation hidden" data-dashboard-invitation-target="content" >
         <%= render 'dashboards/invitation', :locals => { :event => @event } %>
-      </div>
-    </div>
-  </div>
-</div>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
+<%# </div> %>
