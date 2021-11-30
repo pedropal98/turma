@@ -1,11 +1,13 @@
 <div class= "event-show" >
-  <div class= "slider mb-4">
-    <div data-controller="overview">
-      <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
-      <div data-overview-target="tab" data-action="click->overview#open">
-        <h1><%= @event.name %><h1>
-        <div class = "overview hidden" data-overview-target="content" >
-          <%= render 'shared/overview-artist', :locals => { :event => @event } %>
+  <div class="head-calendar">
+    <div class= "slider mb-4">
+      <div data-controller="overview">
+        <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
+        <div data-overview-target="tab" data-action="click->overview#open">
+          <h1><%= @event.name %><h1>
+          <div class = "overview hidden" data-overview-target="content" >
+            <%= render 'shared/overview-artist', :locals => { :event => @event } %>
+        </div>
       </div>
     </div>
   </div>
@@ -41,7 +43,7 @@
     <div class="close-btn mt-2 hidden" data-hotel-target="close" data-action="click->hotel#close">X</div>
     <div class="tab" data-hotel-target="tab" data-action="click->hotel#open">
       <div class="d-flex justify-content-between">
-        <h3>Accomodation</h3>
+        <h3>ccomodation</h3>
       </div>
       <div class = "hotel hidden" data-hotel-target="content" >
         <%= render 'shared/hotel', :locals => { :event => @event } %>
