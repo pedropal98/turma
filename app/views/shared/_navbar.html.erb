@@ -2,9 +2,9 @@
   <% if user_signed_in? %>
     <div class = "avatar">
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 50, width: 50, crop: :fill %>
+        <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill %>
       <% else %>
-        <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 50, width: 50, crop: :fill %>
+        <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill %>
       <% end %>
       <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
         <%= link_to "edit profile", edit_user_registration_path, class: "dropdown-item" %>
@@ -13,11 +13,10 @@
       </div>
     </div>
   <% end %>
-  <div class ="search">
-    <div class="search_icon">
-      <i class="fas fa-search search-icon"></i>
-    </div>
-    <div class="search_bar">
+
+  <div class="wrapper search_items" data-controller="search">
+    <i class="fas fa-search search-icon" data-search-target="open"  data-action="click->search#openSearch"></i>
+    <div class="search_bar hidden" data-search-target="search">
       <%= form_tag events_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
