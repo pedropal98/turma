@@ -1,4 +1,5 @@
-  <div>
+<div class="dashboard-contents">
+  <div class="devent"
     <% @invitations.each do |invitation| %>
       <h1><%= invitation.event.user.name %></h1>
       <h1><%= invitation.event.name %></h1>
@@ -23,3 +24,15 @@
       </div>
     <% end %>
   </div>
+</div>
+
+
+<%# <div class="dashboard-contents">
+  <div class="devent"
+    <div class = "d-flex justify-content-center">
+      <% @events.each do |event| %>
+        <%# <h1><%= event.name</h1> %>
+      <%# <% end %>
+    <%# </div> %>
+  <%# </div> %>
+<%# </div> %>
