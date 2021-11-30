@@ -8,7 +8,6 @@ class EventsController < ApplicationController
       sql_query = "name ILIKE :query OR category ILIKE :query"
       @events = Event.where(sql_query, query: "%#{params[:query]}%")
     else
-
       @events = Event.where(user: current_user) + Event.joins(:invitations).where(invitations: { user: current_user })
 
     end
