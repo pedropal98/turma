@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
+  patch '/events/:event_id/messages', to: "messages#update"
+
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
