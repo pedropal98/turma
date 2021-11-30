@@ -7,11 +7,20 @@
           <%= f.input :date, html5: true %>
           <%= f.input :photo, as: :file %>
         </div>
-
-        <%= f.input :address %>
-        <%= f.input :category %>
-        <%= f.input :guestlist %>
-        <%= f.input :performers %>
+    <% if current_user.role == "Artist" %>
+      <%= f.input :performers %>
+      <%= f.input :guestlist %>
+      <%= f.input :rider %>
+    <% else %>
+      <%= f.input :address %>
+      <%= f.input :category %>
+      <%= f.input :accomodation %>
+      <%= f.input :food %>
+      <%= f.input :technician %>
+      <%= f.input :driver %>
+      <%= f.input :performers %>
+    <% end %>
+    </div>
 
 
     </div>
