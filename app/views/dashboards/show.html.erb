@@ -7,52 +7,46 @@
     <%= link_to "My events", dashboards_path(page: 'events') %>
     <%= link_to "My invitations", invitations_path(page: 'invitations') %>
   </div>
+</div>
 
-  <div class= "event-show" >
-    <div class= "slider mb-4">
-      <div data-controller="overview">
-        <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
-        <div data-overview-target="tab" data-action="click->overview#open">
-          <h1><%= "Edit profile" %><h1>
-          <div class = "overview hidden" data-overview-target="content" >
-            <%= render :template => 'devise/registrations/edit',
-                          :locals => {
-                            :resource => current_user,
-                            :resource_name => 'User' } %>
-          </div>
+<div class= "event-show" >
+  <div class= "slider mb-4">
+    <div data-controller="overview">
+      <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
+      <div data-overview-target="tab" data-action="click->overview#open">
+        <h1><%= "Edit profile" %><h1>
+        <div class = "overview hidden" data-overview-target="content" >
+          <%= render :template => 'devise/registrations/edit',
+                        :locals => {
+                          :resource => current_user,
+                          :resource_name => 'User' } %>
         </div>
       </div>
     </div>
   </div>
 
-  <%# <% unless @event.nil? ||  @event.empty?  %>
-    <div class="wrapper" data-controller="overview">
-      <div class="close-btn mt-2 hidden" data-food-target="close" data-action="click->overview#close">X</div>
-      <div class="tab" data-overview-target="tab" data-action="click->overview#open">
+    <div class="wrapper" data-controller="dashboard-event">
+      <div class="close-btn mt-2 hidden" data-dashboard-event-target="close" data-action="click->dashboard-event#close">X</div>
+      <div class="tab" data-dashboard-event-target="tab" data-action="click->dashboard-event#open">
         <div class="d-flex justify-content-between">
           <h3>Your events</h3>
         </div>
-        <div class = "overview hidden" data-overview-target="content" >
-          <%= render 'event', :locals => { :events => @events } %>
+        <div class = "dashboard-event hidden" data-dashboard-event-target="content" >
+          <%= render 'dashboards/event', :locals => { :event => @event } %>
         </div>
       </div>
     </div>
-  <%# <% end %>
 
-  <div class="wrapper" data-controller="hotel">
-    <div class="close-btn mt-2 hidden" data-hotel-target="close" data-action="click->hotel#close">X</div>
-    <div class="tab" data-hotel-target="tab" data-action="click->hotel#open">
+
+  <div class="wrapper" data-controller="dashboard-invitation">
+    <div class="close-btn mt-2 hidden" data-dashboard-invitation-target="close" data-action="click->dashboard-invitation#close">X</div>
+    <div class="tab" data-dashboard-invitation-target="tab" data-action="click->dashboard-invitation#open">
       <div class="d-flex justify-content-between">
         <h3>Your invitations</h3>
       </div>
-      <div class = "hotel hidden" data-hotel-target="content" >
-        <%= render 'invitation', :locals => { :event => @event } %>
+      <div class = "dashboard-invitation hidden" data-dashboard-invitation-target="content" >
+        <%= render 'dashboards/invitation', :locals => { :event => @event } %>
       </div>
     </div>
   </div>
-
-  <%# <div class="">
-    <%= render "#{params[:page]}.html.erb" %>
-  <%# </div> %>
-
 </div>
