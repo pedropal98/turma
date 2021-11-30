@@ -1,9 +1,11 @@
+
+
 <div>
   <div class="calender" data-calendar-target="calendarr">
     <% if current_user.role == "Artist" %>
-      <%= render 'shared/calender-artist'%>
+      <%= render 'shared/calender-artist', unreadMessages: @unreadMessages %>
     <% else %>
-      <%= render 'shared/calender-venue'%>
+      <%= render 'shared/calender-venue', unreadMessages: @unreadMessages%>
     <% end %>
   </div>
   <div class="list hidden" data-calendar-target="list">

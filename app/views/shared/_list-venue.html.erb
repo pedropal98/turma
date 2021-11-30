@@ -7,7 +7,8 @@
 </div>
 
 <% @events_month.each do |event| %>
-    <div class="tab">
+    <% notification = @unreadMessages[event.id] && @unreadMessages[event.id] > 0 ? 'notification' : '' %>
+    <div class="tab <%= notification %>">
     <%= link_to event_path(event) do %>
         <h3><%= event.name %></h3>
         <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
