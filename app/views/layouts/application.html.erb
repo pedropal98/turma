@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Turma</title>
+    <title>TURMA - your digital tour manager!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('cube-solid.svg') %>
@@ -11,7 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body data-controller="calendar">
+  <body data-controller="calendar" data-calendar-open-value="<%= params[:commit] == 'Search' %>">
     <%= render 'shared/navbar' if user_signed_in? %>
     <%= render 'shared/flashes' %>
     <div class="container">

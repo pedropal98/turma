@@ -4,6 +4,12 @@ class EventsController < ApplicationController
     start_date = params.fetch(:date, Date.today).to_date
     @events_month = Event.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
 
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @events = Event.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @events = Event.all
+    end
   end
 
   def show
@@ -46,6 +52,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:travel, :date, :accomodation, :food, :category, :technician, :rider, :driver, :name, :address, :photo, :performers)
+    params.require(:event).permit(:travel, :date, :accomodation, :food, :category, :technician, :rider, :driver, :name, :address, :photo, :performers, :guestlist)
   end
 end

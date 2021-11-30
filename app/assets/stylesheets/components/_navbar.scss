@@ -7,6 +7,7 @@
   padding: 23px;
   padding-top: 30px;
   align-items: center;
+  z-index: 100;
 }
 
 .sticky {
@@ -15,9 +16,16 @@
 	top: 0px;
 }
 
+.search {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
 .search-icon {
   color: $main;
   font-size: 20px;
+  margin: 10px 15px;
 }
 
 .navbar-container::after {
@@ -28,4 +36,8 @@
   box-shadow: 0px 3px 2px rgba(255, 255, 255, 0.2);
   width: 360px;
   height: 1px;
+}
+
+.search_btn {
+  visibility: hidden;
 }
