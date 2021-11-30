@@ -6,10 +6,10 @@
         <h1><%= @event.name %><h1>
         <div class = "overview hidden" data-overview-target="content" >
           <%= render 'shared/overview-artist', :locals => { :event => @event } %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <div class="wrapper" data-controller="chat">
     <div class="close-btn mt-2 hidden" data-chat-target="close" data-action="click->chat#close">X</div>

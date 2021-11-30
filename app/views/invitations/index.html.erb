@@ -1,13 +1,12 @@
-<div class="container">
+<div class = "container">
   <h1>invitations</h1>
-
   <div>
-    <% @invitations.each do |invitation| %>
-      <h1><%= invitation.event.user.name %></h1>
-      <h1><%= invitation.event.name %></h1>
-      <h1><%= invitation.content %></h1>
-      <h1>Status:
-        <span>
+    <div>
+      <% @invitations.each do |invitation| %>
+        <h2><%= invitation.event.name %></h2>
+        <h3><%= invitation.event.user.name %></h3>
+        <span><%= invitation.content %></span>
+      <span>Status:
           <% if invitation.status.nil? %>
             <span class="pending">Pending</span>
           <% elsif invitation.status %>
@@ -24,6 +23,6 @@
         <% end %>
         <%= link_to "Delete", event_invitation_path(invitation.event, invitation), method: :delete %>
       </div>
-    <% end %>
+        <% end %>
   </div>
 </div>

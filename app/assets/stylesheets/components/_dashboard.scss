@@ -5,16 +5,18 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  overflow-y: hidden;
 }
 
   // h1 {
   //   border-bottom: 1px solid $gray-200;
   //   margin-bottom: 0;
   //   padding: 1rem;
-  // }
+
 
   .devent {
     height: 100%;
     overflow: scroll;
     padding: 1rem;
+    overflow-y: hidden;
   }
