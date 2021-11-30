@@ -8,6 +8,7 @@
           <%= f.input :photo, as: :file %>
         </div>
     <% if current_user.role == "Artist" %>
+      <%= f.input :address %>
       <%= f.input :performers %>
       <%= f.input :guestlist %>
       <%= f.input :rider %>
@@ -21,10 +22,6 @@
       <%= f.input :performers %>
     <% end %>
     </div>
-
-
-    </div>
-
-      <%= f.button :submit, 'Create Event', class: "button btn-primary" %>
+    <%= f.button :submit, 'Create Event', class: "button btn-primary" %>
   <% end %>
 </div>
