@@ -1,7 +1,7 @@
 .slider {
   margin-top: 15px;
   margin-bottom: 0.5em;
-  --border-size: 30px;
+  --border-size: 11px;
   display: inline-block;
   background-color: $background;
   color: $main;
@@ -9,8 +9,8 @@
   font-size: $normal-headers;
   font-weight: bold;
   letter-spacing: 2px;
-  width: 100%;
-  padding: 0.8em 0;
+  width: 95%;
+  padding: 0.5em 0;
   text-align: center;
   border: 2px solid $main;
   border-right: var(--border-size) solid $main;
@@ -45,6 +45,7 @@
     color: rgba($main, 0.7);
 
   }
+  padding-inline: 30px;
 }
 
 .sticky-slider {

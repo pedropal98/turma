@@ -1,6 +1,6 @@
 .simple-calendar {
-  td {color: $main; size: 10px; padding: 0;}
-  th {color: $main; border: 0px !important;}
+  td {color: $main; size: 10px; padding: 0px;}
+  th {color: $main; border: 0px !important; padding-bottom: 5px; padding: 0px;}
   span {color: $main;}
   a:hover {text-decoration: none; color: $main;}
   tr {height: 90px;}
@@ -15,10 +15,8 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {background: $background !important;
-    border: solid;
-    border-color: $main;
-    border-radius: 50px;
+  .today {background: rgba(255, 255, 255, 0.15) !important;
+
   }
   .past {}
   .future {}
@@ -33,7 +31,8 @@
 }
 
 .table{
-  margin-top: -30px;
+  margin-top: -55px;
+  margin-left: 10px;
 }
 
 .calender-title {
@@ -53,5 +52,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 15px;
+}
+
+.head-calendar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
