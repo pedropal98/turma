@@ -3,10 +3,10 @@
 </div>
 
 <% @events.each do |event| %>
-    <div class="tab">
+  <div class="tab">
     <%= link_to event_path(event) do %>
         <h3><%= event.name %></h3>
         <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
     <%end%>
-      </div>
+  </div>
 <% end %>

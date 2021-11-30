@@ -1,12 +1,12 @@
 <div class = "justify-content-center">
   <% if @event.photo.attached? %>
-    <%= cl_image_tag @event.photo.key, height: 150, width: 250, crop: :fill %>
+    <%= cl_image_tag @event.photo.key, height: 300, width: 200, crop: :fill %>
   <% else %>
     <%= image_tag "https://www.squeaker.net/image/event/event-placeholder-list.png", height: 150, width: 250, crop: :fill %>
   <% end %>
 </div>
 
-<div>
+<div class="details">
   <h1><%= @event.date %></h1>
   <h6><%= @event.address %></h6>
 </div>
@@ -26,8 +26,7 @@ data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   <% end %>
 </div>
 
-<%= link_to 'edit', edit_event_path %>
-<br>
-<%= link_to "delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
-<br>
-<%= link_to 'back', events_path %>
+<div class = "options">
+  <h3><%= link_to 'edit', edit_event_path %></h3>
+  <h3><%= link_to "delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %></h3>
+</div>

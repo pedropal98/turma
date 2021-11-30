@@ -11,9 +11,9 @@
   </div>
 </div>
 
-  <div class="wrapper" data-controller="chat">
+  <div class="tab" data-controller="chat">
     <div class="close-btn mt-2 hidden" data-chat-target="close" data-action="click->chat#close">X</div>
-    <div class="tab" data-chat-target="tab" data-action="click->chat#open">
+    <div data-chat-target="tab" data-action="click->chat#open">
       <h3>Chat</h3>
       <span><%= @event.user.name %> & <%= current_user.name %> </span>
       <div class = "chat hidden" data-chat-target="content" >
@@ -23,9 +23,9 @@
   </div>
 
 <% unless @event.performers.nil? ||  @event.performers.empty?  %>
-  <div class="wrapper" data-controller="performers">
+  <div class="tab" data-controller="performers">
     <div class="close-btn mt-2 hidden" data-performers-target="close" data-action="click->performers#close">X</div>
-    <div class="tab" data-performers-target="tab" data-action="click->performers#open">
+    <div data-performers-target="tab" data-action="click->performers#open">
       <div class="d-flex justify-content-between">
         <h3>Performers</h3>
       </div>
@@ -37,9 +37,9 @@
 <% end %>
 
 <% unless @event.rider.nil? ||  @event.rider.empty?  %>
-  <div class="wrapper" data-controller="rider">
+  <div class="tab" data-controller="rider">
     <div class="close-btn mt-2 hidden" data-rider-target="close" data-action="click->rider#close">X</div>
-    <div class="tab" data-rider-target="tab" data-action="click->rider#open">
+    <div data-rider-target="tab" data-action="click->rider#open">
       <div class="d-flex justify-content-between">
         <h3>Rider</h3>
       </div>
@@ -52,9 +52,9 @@
 
 
 <% unless @event.guestlist.nil? ||  @event.guestlist.empty?  %>
-  <div class="wrapper" data-controller="guestlist">
+  <div class="tab" data-controller="guestlist">
     <div class="close-btn mt-2 hidden" data-guestlist-target="close" data-action="click->guestlist#close">X</div>
-    <div class="tab" data-guestlist-target="tab" data-action="click->guestlist#open">
+    <div data-guestlist-target="tab" data-action="click->guestlist#open">
       <div class="d-flex justify-content-between">
         <h3>Guestlist</h3>
       </div>
