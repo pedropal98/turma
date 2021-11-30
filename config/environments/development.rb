@@ -59,6 +59,7 @@ Rails.application.configure do
   config.hosts << /[a-z0-9]+\.ngrok\.io/
   config.hosts << "3a76-213-61-167-82.ngrok.io"
   config.hosts << "024b-213-61-167-82.ngrok.io"
+  config.hosts << "7ce4-62-96-151-154.ngrok.io"
   #config.hosts << "b41c-213-61-167-82.ngrok.io"
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
