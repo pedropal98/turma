@@ -49,3 +49,18 @@
     </div>
   </div>
 <% end %>
+
+
+<% unless @event.guestlist.nil? ||  @event.guestlist.empty?  %>
+  <div class="wrapper" data-controller="guestlist">
+    <div class="close-btn mt-2 hidden" data-guestlist-target="close" data-action="click->guestlist#close">X</div>
+    <div class="tab" data-guestlist-target="tab" data-action="click->guestlist#open">
+      <div class="d-flex justify-content-between">
+        <h3>Guestlist</h3>
+      </div>
+      <div class = "guestlist hidden" data-guestlist-target="content" >
+        <%= render 'shared/guestlist', :locals => { :event => @event } %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,14 +1,36 @@
-  <div class="chatroom">
-    <div class="messages"
-          data-controller="event-subscription"
-          data-event-subscription-chatroom-id-value="<%= @event.id %>">
-      <% @event.messages.each do |message| %>
-        <%= render "messages/message", message: message %>
-      <% end %>
-    </div>
-
-    <%= simple_form_for([@event, @message], data: { show_target: 'form' }, remote: true) do |f| %>
-      <%= f.input :content,  label: false, placeholder: "Message ##{@event.name}" %>
-      <%= f.submit 'Send', class: "btn-primary form-send" %>
+<div class="chatroom" data-controller="chatroom">
+  <div class="messages"
+        data-controller="event-subscription"
+        data-event-subscription-event-id-value="<%= @event.id %>"
+        data-chatroom-target="messages">
+    <% @event.messages.reverse.each do |message| %>
+      <%# viewName = message.user == current_user %>
+      <%= render :partial => 'messages/message', :locals => { message: message } %>
     <% end %>
+
+  <%# WHY CAN'T I PASS viewName as variable? %>
   </div>
+
+  <%= simple_form_for([@event, @message], remote: true, data: { chatroom_target: 'formSubmit', action: 'submit->chatroom#submit' }) do |f| %>
+    <%= f.input :content,  label: false,  placeholder: "Message ##{@event.name}", autofocus: true %>
+    <%= f.submit 'Send', class: "btn-primary form-send" %>
+  <% end %>
+</div>
+
+
+<%# add a script to listen to submit and clear the form %>
+<%# another script to listen to load? and scroll to bottom %>
+<script>
+  const form = document.getElementById('new_message');
+  const content = document.getElementById('message_content');
+
+
+
+
+  // scroll down
+
+
+
+
+</script>
+<%# It doesnt workkkkk %>
