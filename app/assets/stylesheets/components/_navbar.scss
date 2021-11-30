@@ -41,3 +41,10 @@
 .search_btn {
   visibility: hidden;
 }
+
+.search_bar {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-top: 30px;
+}
