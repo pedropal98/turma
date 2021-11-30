@@ -1,12 +1,11 @@
 
 <div class="slider sticky">
-  <div class="calendar-heading">
-    <div class="prev"><</div>
-    <div class="calendar-title">November 2021</div>
-    <div class="next">></div>
+  <div class="list-heading">
+    <div class="list-title">EVENTS</div>
   </div>
 </div>
-<% @events_month.each do |event| %>
+
+<% @events.each do |event| %>
     <% notification = @unreadMessages[event.id] && @unreadMessages[event.id] > 0 ? 'notification' : '' %>
     <div class="tab <%= notification %>">
     <%= link_to event_path(event) do %>
