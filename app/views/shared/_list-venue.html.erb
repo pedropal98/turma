@@ -1,10 +1,8 @@
 <div class="slider sticky">
-  <div class="list-heading">
-    <div class="list-title">EVENTS</div>
-  </div>
+  <div class="list-title">EVENTS</div>
 </div>
 
-<% @events_month.each do |event| %>
+<% @events.each do |event| %>
     <div class="tab">
     <%= link_to event_path(event) do %>
         <h3><%= event.name %></h3>
