@@ -37,6 +37,10 @@
 
   .wrapper {
     position: relative;
+
+    &:last-of-type {
+      margin-bottom: 4.5em;
+    }
   }
 
   .close-btn {
