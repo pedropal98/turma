@@ -3,6 +3,13 @@ import { Controller } from "stimulus"
 export default class extends Controller {
 
   static targets = ['list', 'calendarr', 'open', 'close']
+  static values = {open: Boolean}
+
+  connect() {
+    if (this.openValue) {
+      this.closeCalendar()
+    }
+  }
 
   openCalendar() {
     this.calendarrTarget.classList.remove("hidden");

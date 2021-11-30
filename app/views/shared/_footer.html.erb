@@ -1,13 +1,13 @@
-  <div class="footer-container">
-    <%= link_to new_event_path do %>
-      <i class="fas fa-plus add"></i>
-    <% end %>
-    <%if current_page?('/events') === true %>
-      <i class="fas fa-cube logo-footer hidden" data-calendar-target="open"  data-action="click->calendar#openCalendar"></i>
-      <i class="fas fa-cube logo-footer" data-calendar-target="close" data-action="click->calendar#closeCalendar"></i>
-    <% else %>
-        <%= link_to root_path do %>
-          <i class="fas fa-cube logo-footer"></i>
-        <% end %>
-    <% end %>
-    </div>
+<div class="footer-container">
+  <%= link_to new_event_path do %>
+    <i class="fas fa-plus add"></i>
+  <% end %>
+  <%if current_page?('/events') === true %>
+    <i class="fas fa-cube logo-footer hidden" data-calendar-target="open"  data-action="click->calendar#openCalendar"></i>
+    <i class="fas fa-cube logo-footer" data-calendar-target="close" data-action="click->calendar#closeCalendar"></i>
+  <% else %>
+      <%= link_to root_path do %>
+        <i class="fas fa-cube logo-footer"></i>
+      <% end %>
+  <% end %>
+</div>

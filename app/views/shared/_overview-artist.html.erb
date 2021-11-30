@@ -17,11 +17,6 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-    <%= link_to 'edit', edit_event_path %>
-    <br>
-    <%= link_to "delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
-    <br>
-    <%= link_to 'back', events_path %>
     <div class="container">
       <h3> Invitation </h3>
       <%= simple_form_for [@event, @invitation] do |f| %>
@@ -30,3 +25,9 @@
         <%= f.submit "invite" %>
       <% end %>
     </div>
+
+  <%= link_to 'edit', edit_event_path %>
+  <br>
+  <%= link_to "delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?"} %>
+  <br>
+  <%= link_to 'back', events_path %>
