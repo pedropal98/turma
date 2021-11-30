@@ -8,7 +8,6 @@ export default class extends Controller {
     this.channel = consumer.subscriptions.create(
       { channel: "EventChannel", id: this.eventIdValue },
       { received: data => this.element.insertAdjacentHTML("afterbegin", data) }
-      // { received: data => console.log(data) }
     )
 
   }
