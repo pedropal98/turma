@@ -1,11 +1,24 @@
-.rsvpLinks {
-  position: absolute;
-  right: 29px;
-  top: 170px;
-}
+.dashboard {
+  h1 {
+    font-size: 2rem;
+    margin-block: .2em 0.5em;
+    margin-left: 0.5em;
+  }
 
-.clos-btn {
-  font-size: $normal-headers;
-  position: absolute;
-  right: 30px;
+    .username {
+    color: $alert;
+  }
+
+  .rsvpLinks {
+    position: absolute;
+    right: 29px;
+    top: 170px;
+  }
+
+  .clos-btn {
+    font-size: $normal-headers;
+    position: absolute;
+    right: 30px;
+  }
+
 }
