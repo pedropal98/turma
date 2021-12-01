@@ -6,11 +6,13 @@
 
 <% @events_month.each do |event| %>
   <% count = event.messages.where("read = false AND user_id != #{current_user.id}").count %>
-    <% notification = count > 0 ? 'notification' : '' %>
-    <div class="tab <%= notification %>">
-      <%= link_to event_path(event) do %>
+  <% notification = count > 0 ? 'notification' : '' %>
+  <div class="tab <%= notification %>">
+    <%= link_to event_path(event) do %>
+      <div class="tab-headers">
         <h3><%= event.name %></h3>
         <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
-      <%end%>
-    </div>
+      </div>
+    <%end%>
+  </div>
 <% end %>
