@@ -1,7 +1,11 @@
 <div>
   <h1>Hello <span><%= current_user.name %></span>, we love you.</h1>
 </div>
-
+<div class="head-calendar">
+  <div class="slider sticky-slider">
+    <div class="list-title">INVITATIONS</div>
+  </div>
+</div>
   <% @invitations.each do |invitation| %>
     <% if invitation.status.nil? %>
       <div class="wrapper" data-controller="invitation">
