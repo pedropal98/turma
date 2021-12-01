@@ -59,6 +59,10 @@
     border-color: $alert;
   }
 
+   &.notification:hover {
+    border-color: $alert;
+  }
+
   &.open {
     height: 420px;
 

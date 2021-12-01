@@ -1,15 +1,17 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.where(user_id: current_user.id)
     start_date = params.fetch(:date, Date.today).to_date
-    @events_month = Event.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @events_month = Event.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week).where(user_id: current_user.id)
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR category ILIKE :query"
       @events = Event.where(sql_query, query: "%#{params[:query]}%")
     else
-      @events = Event.all
+      @events = Event.where(user: current_user) + Event.joins(:invitations).where(invitations: { user: current_user })
+
     end
+# find all events where user_id is current_user.id OR event.invitations.user_id = current_user.id
   end
 
   def show
@@ -50,6 +52,8 @@ class EventsController < ApplicationController
   end
 
   private
+
+
 
   def event_params
     params.require(:event).permit(:travel, :date, :accomodation, :food, :category, :technician, :rider, :driver, :name, :address, :photo, :performers, :guestlist)

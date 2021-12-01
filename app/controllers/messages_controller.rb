@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :update
+
   def create
     @event = Event.find(params[:event_id])
     @message = Message.new(message_params)
@@ -13,8 +15,13 @@ class MessagesController < ApplicationController
     else
       render "events/show"
     end
+  end
 
-
+  def update
+    event = Event.find(params[:event_id])
+    event.messages.each do |message|
+      message.update(read: true) if message.user != current_user
+    end
   end
 
   def index
