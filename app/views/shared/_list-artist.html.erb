@@ -9,8 +9,10 @@
   <% notification = count > 0 ? 'notification' : '' %>
   <div class="tab <%= notification %>">
     <%= link_to event_path(event) do %>
-      <h3><%= event.name %></h3>
-      <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
+      <div class="tab-headers">
+        <h3><%= event.name %></h3>
+        <span><%= event.date.to_formatted_s(:long_ordinal) %></span>
+      </div>
     <%end%>
   </div>
 <% end %>
