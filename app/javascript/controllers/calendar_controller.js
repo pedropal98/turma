@@ -16,6 +16,7 @@ export default class extends Controller {
     this.listTarget.classList.add("hidden");
     this.openTarget.classList.add("hidden");
     this.closeTarget.classList.remove("hidden");
+    this.openTarget.classList.add("open");
   }
 
   closeCalendar() {
