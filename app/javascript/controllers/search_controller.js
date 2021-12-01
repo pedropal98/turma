@@ -6,7 +6,6 @@ export default class extends Controller {
   static values = { open: Boolean }
 
   openSearch() {
-    this.searchTarget.classList.remove("hidden");
-    this.openTarget.classList.add("hidden");
+
   }
 }

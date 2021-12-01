@@ -16,7 +16,7 @@
 
   <div class="wrapper search_items" data-controller="search">
     <i class="fas fa-search search-icon" data-search-target="open"  data-action="click->search#openSearch"></i>
-    <div class="search_bar hidden" data-search-target="search">
+    <div class="search_bar" data-search-target="search">
       <%= form_tag events_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
