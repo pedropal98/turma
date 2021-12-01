@@ -4,9 +4,10 @@
       <div data-controller="overview">
         <div class= "hidden" data-overview-target="close" data-action="click->overview#close">X</div>
         <div data-overview-target="tab" data-action="click->overview#open">
-          <h1><%= @event.name %><h1>
+          <h1><%= @event.name %></h1>
           <div class = "overview hidden" data-overview-target="content" >
             <%= render 'shared/overview-artist', :locals => { :event => @event } %>
+          </div>
         </div>
       </div>
     </div>

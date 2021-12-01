@@ -7,8 +7,8 @@
         <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill %>
       <% end %>
       <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+        <%= link_to "Invitations", dashboards_path, class: "dropdown-item" %>
         <%= link_to "edit profile", edit_user_registration_path, class: "dropdown-item" %>
-        <%= link_to "dashboard", dashboards_path, class: "dropdown-item" %>
         <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
     </div>
