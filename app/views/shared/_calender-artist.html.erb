@@ -1,9 +1,11 @@
 <%= month_calendar(events: @events, attribute: :date) do |date, events| %>
   <%= date.day %>
     <% events.each do |event| %>
+      <% count = event.messages.where("read = false AND user_id != #{current_user.id}").count %>
+      <% notification = count > 0 ? 'notification' : '' %>
       <%= link_to event_path(event) do %>
         <div class="event">
-              <p><%= event.name %></p>
+          <p class="<%= notification %>"><%= event.name %></p>
         </div>
       <% end %>
   <% end %>

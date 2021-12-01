@@ -14,9 +14,9 @@
 
   <div class="wrapper" data-controller="chat">
     <div class="close-btn mt-2 hidden" data-chat-target="close" data-action="click->chat#close">X</div>
-    <div class="tab" data-chat-target="tab" data-action="click->chat#open">
+     <div class="tab" data-chat-target="tab" data-action="click->chat#open">
       <h3>Chat</h3>
-      <span><%= @event.user.name %> & <%= current_user.name %> </span>
+      <span><%= @event.user.name %><%= @event.invitations.count > 0 ? " & #{@event.invitations[0].user.name}" : '' %> </span>
       <div class = "chat hidden" data-chat-target="content" >
         <%= render 'shared/chat', :locals => { :event => @event, :invitation => @invitation, :message => @message } %>
       </div>
