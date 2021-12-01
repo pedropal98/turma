@@ -5,7 +5,7 @@
   <% @invitations.each do |invitation| %>
     <% if invitation.status.nil? %>
       <div class="wrapper" data-controller="invitation">
-          <div class="close-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
+          <div class="clos-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
           <div class="rsvpLinks d-flex">
               <p><%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %></p>
               <span>//</span>
