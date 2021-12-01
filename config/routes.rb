@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "dashboards", to: "dashboards#show"
   resources :events do
-    resources :invitations, only: [:index, :create, :update, :destroy ]
+    resources :invitations, only: [:create, :update, :destroy ]
     resources :messages, only: [:create]
   end
 

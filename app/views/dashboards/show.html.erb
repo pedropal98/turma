@@ -1,16 +1,23 @@
-<div class = 'dash_top'>
-  <div class = 'title'>
-    <h1>Hello <span class="pink"><%= current_user.name %></span>, we love you.</h1>
-  </div>
-
-  <div class="tabs">
-    <%= link_to "My events", dashboards_path(page: 'events') %>
-    <br>
-    <%= link_to "My invitationss", dashboards_path(page: 'invitations') %>
-  </div>
-
-  <%# <div class="card-grid">
-    <%= render "#{params[:page]}.html.erb" %>
-  <%# </div> %>
-
+<div>
+  <h1>Hello <span><%= current_user.name %></span>, we love you.</h1>
 </div>
+
+  <% @invitations.each do |invitation| %>
+    <% if invitation.status.nil? %>
+      <div class="wrapper" data-controller="invitation">
+          <div class="clos-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
+          <div class="rsvpLinks d-flex">
+              <p><%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %></p>
+              <span>//</span>
+              <p><%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %></p>
+          </div>
+          <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
+            <h3><%= invitation.event.name %></h3>
+            <p><%= invitation.event.user.name %></p>
+            <div class = "invitation hidden" data-invitation-target="content" >
+              <p><%= invitation.content %></p>
+            </div>
+          </div>
+      </div>
+    <% end %>
+<% end %>
