@@ -1,5 +1,9 @@
 <% if current_user.role == "Artist" %>
+<div class="list-cont">
   <%= render "shared/show-artist" %>
+</div>
 <% else %>
+<div class="list-cont">
   <%= render "shared/show-venue" %>
+</div>
 <% end %>
