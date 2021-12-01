@@ -11,7 +11,7 @@
   <%# WHY CAN'T I PASS viewName as variable? %>
   </div>
 
-  <%= simple_form_for([@event, @message], remote: true, data: { chatroom_target: 'formSubmit', action: 'submit->chatroom#submit' }) do |f| %>
+  <%= simple_form_for([@event, @message], remote: true, data: { chatroom_target: 'formSubmit', chat_target: 'formUrl', action: 'submit->chatroom#submit' }) do |f| %>
     <%= f.input :content,  label: false,  placeholder: "Message ##{@event.name}", autofocus: true %>
     <%= f.submit 'Send', class: "btn-primary form-send" %>
   <% end %>

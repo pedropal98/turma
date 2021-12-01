@@ -9,7 +9,6 @@ export default class extends Controller {
       { channel: "EventChannel", id: this.eventIdValue },
       { received: data => this.element.insertAdjacentHTML("afterbegin", data) }
     )
-
   }
 
 
