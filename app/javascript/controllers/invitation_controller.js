@@ -1,27 +1,19 @@
-import { Controller } from "stimulus"
+import { Controller } from "stimulus";
 
 export default class extends Controller {
+  static targets = ['tab', 'close', 'content'];
 
-  static targets = ['list', 'calendarr', 'open', 'close']
-  static values = { open: Boolean }
+  open() {
 
-  connect() {
-    if (this.openValue) {
-      this.closeInvitation()
-    }
-  }
-
-  openInvitation() {
-    this.calendarrTarget.classList.remove("hidden");
-    this.listTarget.classList.add("hidden");
-    this.openTarget.classList.add("hidden");
+    this.tabTarget.classList.add("open");
     this.closeTarget.classList.remove("hidden");
+    this.contentTarget.classList.remove("hidden");
+
   }
 
-  closeInvitation() {
-    this.calendarrTarget.classList.add("hidden");
-    this.listTarget.classList.remove("hidden");
-    this.openTarget.classList.remove("hidden");
+  close() {
+    this.tabTarget.classList.remove("open");
     this.closeTarget.classList.add("hidden");
+    this.contentTarget.classList.add("hidden");
   }
 }

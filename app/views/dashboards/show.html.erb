@@ -9,14 +9,23 @@
   </div>
 </div>
 
-<div>
-  <div class="calender" data-calendar-target="calendarr">
-      <%= render 'dashboards/invitation' %>
+<div class="wrapper" data-controller="invitation">
+    <div class="close-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
+    <div class="rsvpLinks d-flex">
+      <a href="#">Approve</a>
+      <a href="#">Decline</a>
+    </div>
+      <% @invitations.each do |invitation| %>
+     <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
+      <h3>INVITATIONS</h3>
+      <span><%= invitation.event.name %></span>
+      <span><%= invitation.event.user.name %></span>
+      <% end %>
+      <div class = "invitation hidden" data-chat-target="content" >
+        <%= render 'dashboards/invitation', :locals => { :event => @event, :invitation => @invitation } %>
+      </div>
+    </div>
   </div>
-  <div class="list hidden" data-calendar-target="list">
-      <%= render 'dashboards/invitation'%>
-  </div>
-</div>
 
 
   <%# <div class="wrapper" data-controller="dashboard-invitation">
