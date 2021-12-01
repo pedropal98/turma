@@ -14,6 +14,7 @@
   </div>
 </div>
 
+
   <% count = @event.messages.where("read = false AND user_id != #{current_user.id}").count %>
   <% notification = count > 0 ? 'notification' : '' %>
   <div class="wrapper" data-controller="chat">

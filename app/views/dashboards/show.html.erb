@@ -9,8 +9,9 @@
               <%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %>
             </div>
             <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
-              <h3><%= invitation.event.name %></h3>
-              <p><span><%= invitation.event.user.name %></span> invited you to collaborate</p>
+                <h3><%= invitation.event.name %></h3>
+                <span><%= invitation.event.user.name %> invited you to collaborate</span>
+
               <div class = "content hidden" data-invitation-target="content" >
                 <p><%= invitation.content %></p>
               </div>
