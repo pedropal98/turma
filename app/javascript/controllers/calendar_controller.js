@@ -17,7 +17,5 @@ export default class extends Controller {
     this.logoTarget.classList.toggle("open");
   }
 
-  resize() {
-    this.toRootLogoTarget.classList.toggle("rezise")
-  }
+
 }
