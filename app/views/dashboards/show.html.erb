@@ -4,11 +4,22 @@
   </div>
 </div>
 
-<div>
-  <div class="calender" data-calendar-target="calendarr">
-      <%= render 'dashboards/invitation' %>
-  </div>
-  <div class="list hidden" data-calendar-target="list">
-      <%= render 'dashboards/invitation'%>
-  </div>
-</div>
+  <% @invitations.each do |invitation| %>
+    <% if invitation.status.nil? %>
+      <div class="wrapper" data-controller="invitation">
+          <div class="close-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
+          <div class="rsvpLinks d-flex">
+              <p><%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %></p>
+              <span>//</span>
+              <p><%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %></p>
+          </div>
+          <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
+            <h3><%= invitation.event.name %></h3>
+            <p><%= invitation.event.user.name %></p>
+            <div class = "invitation hidden" data-invitation-target="content" >
+              <p><%= invitation.content %></p>
+            </div>
+          </div>
+      </div>
+    <% end %>
+<% end %>

@@ -20,3 +20,14 @@
     padding: 1rem;
     overflow-y: hidden;
   }
+
+  .close-btn {
+      font-size: $normal-headers;
+      position: absolute;
+      right: 30px;
+    }
+    .rsvpLinks {
+      position: absolute;
+      right: 29px;
+      top: 170px;
+    }

@@ -1,0 +1,19 @@
+<div class="slider sticky">
+  <div class="list-heading">
+    <div class="list-title">INVITATIONS</div>
+  </div>
+</div>
+
+<% @invitations.each do |invitation| %>
+  <div tab>
+    <%# <%= link_to event_path(event) do %>
+      <h3><%= invitation.event.name %></h3>
+      <p><%= invitation.event.user.name %></p>
+        <%# <div>
+          <% if invitation.status.nil? %>
+            <%# <p><%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %>
+            <%# <p><%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %>
+          <%# <% end %>
+        <%# </div> %>
+  </div>
+<% end %>
