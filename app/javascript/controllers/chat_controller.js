@@ -8,7 +8,7 @@ export default class extends Controller {
     setTimeout(() => {
       this.closeTarget.classList.remove("hidden");
       this.contentTarget.classList.remove("hidden");
-    }, 500);
+    }, 300);
 
     // Add autofocus to foem
     // Scroll to last message

@@ -18,6 +18,8 @@
   border-radius: 10px;
   position: static;
   z-index: 1;
+  transition: all 400ms ease-in-out;
+
 
   & span {
     position: absolute;
