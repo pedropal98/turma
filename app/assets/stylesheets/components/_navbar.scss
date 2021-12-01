@@ -22,10 +22,24 @@
   padding-top: 20px;
 }
 
+#query {
+  border-radius: 100vh;
+}
+
+.search_items {
+  display: flex;
+  margin-top: 1.5em;
+
+}
+
 .search-icon {
   color: $main;
   font-size: 20px;
   margin: 10px 15px;
+
+  &.open {
+
+  }
 }
 
 .navbar-container::after {
@@ -46,5 +60,5 @@
   width: 100%;
   display: flex;
   justify-content: right;
-  padding-top: 30px;
+
 }
