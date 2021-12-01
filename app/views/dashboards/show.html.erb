@@ -1,27 +1,21 @@
-<div>
-  <h1>Hello <span><%= current_user.name %></span>, we love you.</h1>
-</div>
-<div class="head-calendar">
-  <div class="slider sticky-slider">
-    <div class="list-title">INVITATIONS</div>
-  </div>
-</div>
-  <% @invitations.each do |invitation| %>
-    <% if invitation.status.nil? %>
-      <div class="wrapper" data-controller="invitation">
-          <div class="clos-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
-          <div class="rsvpLinks d-flex">
-              <p><%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %></p>
-              <span>//</span>
-              <p><%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %></p>
-          </div>
-          <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
-            <h3><%= invitation.event.name %></h3>
-            <p><%= invitation.event.user.name %></p>
-            <div class = "invitation hidden" data-invitation-target="content" >
-              <p><%= invitation.content %></p>
+  <div class="dashboard">
+    <h1>Hello <span class="username"><%= current_user.name %></span>,<br /> here's your events invitations.</h1>
+    <% @invitations.each do |invitation| %>
+      <% if invitation.status.nil? %>
+        <div class="wrapper" data-controller="invitation">
+            <div class="clos-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
+            <div class="rsvpLinks d-flex">
+              <%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %>
+              <%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %>
             </div>
-          </div>
-      </div>
+            <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
+              <h3><%= invitation.event.name %></h3>
+              <p><span><%= invitation.event.user.name %></span> invited you to collaborate</p>
+              <div class = "content hidden" data-invitation-target="content" >
+                <p><%= invitation.content %></p>
+              </div>
+            </div>
+        </div>
+      <% end %>
     <% end %>
-<% end %>
+  </div>
