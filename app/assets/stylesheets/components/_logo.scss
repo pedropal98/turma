@@ -15,3 +15,18 @@
     line-height: 1;
   }
 }
+
+.logo-footer {
+  color: $alert;
+  font-size: 45px;
+  transform: translate(5px, -4px);
+  transition: transform 300ms ease-in-out;
+
+  &.open {
+    transform: rotateZ(-180deg)
+               translateX(-0.1em)
+               translateY(0.15em);
+    transition: transform 300ms ease-in-out;
+  }
+
+}

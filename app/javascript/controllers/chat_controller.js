@@ -8,7 +8,7 @@ export default class extends Controller {
     setTimeout(() => {
       this.closeTarget.classList.remove("hidden");
       this.contentTarget.classList.remove("hidden");
-    }, 500);
+    }, 300);
 
     // Add autofocus to form
     // Scroll to last message
@@ -18,7 +18,8 @@ export default class extends Controller {
       body: {}
     }).then(response => response.text())
       .then((data) => {
-        console.log(data);
+        this.tabTarget.classList.remove('notification');
+
       })
 
   }
