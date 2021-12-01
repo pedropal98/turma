@@ -12,11 +12,13 @@
   margin-bottom: 0.5em;
   cursor: pointer;
   transition: all 400ms ease-in-out;
-  // display: flex;
-  // flex-direction: column;
   // justify-content: flex-start;
   // gap: 0;
 
+  .tab-headers {
+    display: flex;
+    flex-direction: column;
+  }
 
   &:nth-of-type(2n) {
     border-right: 15px solid $main;
@@ -34,7 +36,9 @@
 
   span {
     font-size: $body-font-size;
-    margin-left: 8.2em;
+    // margin-left: 9em;
+    align-self: flex-end;
+    margin-right: 1.5em;
   }
 
   small {
