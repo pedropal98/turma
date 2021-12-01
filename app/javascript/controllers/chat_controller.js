@@ -18,7 +18,7 @@ export default class extends Controller {
       body: {}
     }).then(response => response.text())
       .then((data) => {
-        this.tabTaeget.classList.remove('notification');
+        this.tabTarget.classList.remove('notification');
 
       })
 
