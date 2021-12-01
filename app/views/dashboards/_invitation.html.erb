@@ -10,6 +10,7 @@
     <%# <%= link_to event_path(event) do %>
       <h3><%= invitation.event.name %></h3>
       <p><%= invitation.event.user.name %></p>
+      <span><%= invitation.content %></span>
         <div>
           <% if invitation.status.nil? %>
             <p><%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %></p>
@@ -17,4 +18,4 @@
           <% end %>
         </div>
   </div>
-<% end
+<% end %>
