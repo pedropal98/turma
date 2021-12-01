@@ -3,6 +3,16 @@
     position: relative;
   }
 
+    &:nth-of-type(2n) > .tab {
+      border-left: 0;
+      border-right: 10px solid $main;
+    }
+
+    &:nth-of-type(2n + 1) > .tab {
+      border-right: 0;
+      border-left: 10px solid $main;
+    }
+
   .tab {
     &.open {
       height: 140px;
