@@ -5,14 +5,13 @@
         <div class="wrapper" data-controller="invitation">
             <div class="clos-btn mt-2 hidden" data-invitation-target="close" data-action="click->invitation#close">X</div>
             <div class="rsvpLinks d-flex">
-                <p><%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %></p>
-                <span>//</span>
-                <p><%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %></p>
+              <%= link_to "Approve", event_invitation_path(invitation.event, invitation, status: true), method: :patch %>
+              <%= link_to "Decline", event_invitation_path(invitation.event, invitation, status: false), method: :patch %>
             </div>
             <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
               <h3><%= invitation.event.name %></h3>
-              <p><%= invitation.event.user.name %></p>
-              <div class = "invitation hidden" data-invitation-target="content" >
+              <p><span><%= invitation.event.user.name %></span> invited you to collaborate</p>
+              <div class = "content hidden" data-invitation-target="content" >
                 <p><%= invitation.content %></p>
               </div>
             </div>

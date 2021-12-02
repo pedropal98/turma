@@ -1,6 +1,6 @@
-.invitation {
-  padding: 20px;
-  margin: 20px 0;
+.card {
+  padding: 10px;
+  margin: 10px 0;
   size: 50%;
   font-size: smaller;
 }
@@ -13,11 +13,28 @@
 }
 
 .details {
-  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+  font-size: smaller;
 }
 
 .map {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.event_pic {
+  margin: 10px;
+}
+
+.btn-link {
+  background-color: orange;
+  color: black;
+}
+
+.btn-link:hover {
+  color: black;
+  text-decoration: none;
 }

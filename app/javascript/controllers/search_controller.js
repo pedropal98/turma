@@ -5,7 +5,15 @@ export default class extends Controller {
   static targets = ['search', 'open', 'close', 'submit', 'searchForm', 'input']
   static values = { open: Boolean }
 
-  openSearch() {
+
+  connect() {
+    if (this.searchTarget.value != '') {
+      this.openTarget.classList.add("active");
+      this.searchTarget.classList.add("open-bar");
+    }
+  }
+
+  openSearch(e) {
     let activeSearch = this.openTarget.classList.contains("active");
 
     if (!activeSearch) {
