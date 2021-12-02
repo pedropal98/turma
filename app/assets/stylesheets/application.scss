@@ -19,8 +19,8 @@
   background-color: $main;
   bottom: 100px;
 
-  animation: fadeaway 2.5s ease-in;
-  -webkit-animation: fadeaway 2.5s ease-in;
+  animation: fadeaway 2.5s ease-in forwards;
+  -webkit-animation: fadeaway 2.5s ease-in forwards;
 
     @keyframes fadeaway {
     0% { -webkit-opacity: 1; opacity: 1; }

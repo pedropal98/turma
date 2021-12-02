@@ -8,10 +8,10 @@
     <i class="fas fa-plus add"></i>
   <% end %>
   <% if current_page?('/events') === true %>
-    <i class="fas fa-cube logo-footer" data-calendar-target="logo" data-action="click->calendar#toggleCalendar"></i>
+    <i class="fas fa-cube logo-footer closed" data-calendar-target="logo" data-action="click->calendar#toggleCalendar"></i>
   <% else %>
     <%= link_to root_path do %>
-      <i class="fas fa-cube logo-footer"></i>
+      <i class="fas fa-cube logo-footer closed"></i>
     <% end %>
   <% end %>
 
