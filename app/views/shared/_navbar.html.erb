@@ -19,7 +19,7 @@
   <% end %>
 
   <div class="wrapper search_items" data-controller="search">
-    <div class="search_bar hidden" data-search-target="search">
+    <div class="search_bar" data-search-target="search">
       <%= form_tag events_path, method: :get, data: { search_target: 'searchForm' } do %>
         <%= text_field_tag :query,
           params[:query],

@@ -18,7 +18,7 @@ export default class extends Controller {
 
     if (!activeSearch) {
 
-      this.searchTarget.classList.remove("hidden");
+      // this.searchTarget.classList.remove("hidden");
       setTimeout(() => {
         this.searchTarget.classList.add("open-bar");
         this.openTarget.classList.add("active");
@@ -31,7 +31,7 @@ export default class extends Controller {
         this.searchTarget.classList.remove("open-bar");
         this.openTarget.classList.remove("active");
         setTimeout(() => {
-          this.searchTarget.classList.add("hidden");
+          // this.searchTarget.classList.add("hidden");
         }, 200);
       }
       else {
