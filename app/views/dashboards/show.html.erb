@@ -10,8 +10,8 @@
             </div>
             <div class="tab" data-invitation-target="tab" data-action="click->invitation#open">
                 <h3><%= invitation.event.name %></h3>
-                <span id="dashboard-date"><%= invitation.event.date.to_formatted_s(:long_ordinal) %></span>
-                <span><%= invitation.event.user.name %> invited you to collaborate</span>
+                <p id="ddate"><%= invitation.event.date.to_formatted_s(:long_ordinal) %></p>
+                <p id="invitor"><%=invitation.event.user.name %> invited you to collaborate</p>
 
               <div class = "content hidden" data-invitation-target="content" >
                 <p><%= invitation.content %></p>
