@@ -1,6 +1,6 @@
 <div class = "justify-content-center">
   <% if @event.photo.attached? %>
-    <%= cl_image_tag @event.photo.key, height: 150, width: 250, crop: :fill %>
+    <%= cl_image_tag @event.photo.key, height: 300, width: 200, crop: :fill %>
   <% else %>
     <%= image_tag "https://www.squeaker.net/image/event/event-placeholder-list.png", height: 150, width: 250, crop: :fill %>
   <% end %>
