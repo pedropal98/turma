@@ -2,15 +2,15 @@ import { Controller } from "stimulus"
 
 export default class extends Controller {
 
-  static targets = ['search', 'open', 'close', 'submit', 'searchForm']
+  static targets = ['search', 'open', 'close', 'submit', 'searchForm', 'input']
   static values = { open: Boolean }
 
 
   connect() {
-    if (this.searchTarget.value != '') {
-      this.openTarget.classList.add("active");
-      this.searchTarget.classList.add("open-bar");
-    }
+    this.searchTarget.value = ''
+    this.openTarget.classList.remove("active");
+    this.searchTarget.classList.remove("open-bar");
+
   }
 
   openSearch(e) {
@@ -18,14 +18,21 @@ export default class extends Controller {
 
     if (!activeSearch) {
 
-      this.searchTarget.classList.add("open-bar");
-      this.openTarget.classList.add("active");
-      this.searchTarget.focus();
+      this.searchTarget.classList.remove("hidden");
+      setTimeout(() => {
+        this.searchTarget.classList.add("open-bar");
+        this.openTarget.classList.add("active");
+
+      }, 200);
+      this.inputTarget.focus();
     }
     else {
-      if (this.searchTarget.value == '') {
+      if (this.inputTarget.value == '') {
         this.searchTarget.classList.remove("open-bar");
         this.openTarget.classList.remove("active");
+        setTimeout(() => {
+          this.searchTarget.classList.add("hidden");
+        }, 200);
       }
       else {
         this.searchFormTarget.submit();
