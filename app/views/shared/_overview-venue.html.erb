@@ -18,23 +18,22 @@ data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
 <div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingOne">
+  <div class="invitation">
+    <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           INVITATION
         </button>
       </h5>
     </div>
-  </div>
-
-  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-    <div class="card-body hidden">
-      <%= simple_form_for [@event, @invitation] do |f| %>
-        <%= f.text_field :user_id, label: 'Who are you looking for?' %>
-        <%= f.input :content, placeholder: 'text' %>
-        <%= f.submit "invite" %>
-      <% end %>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <%= simple_form_for [@event, @invitation] do |f| %>
+          <div class = "user_text" ><%= f.text_field :user_id, placeholder: 'Who are you looking for?' %></div>
+          <%= f.input :content, placeholder: 'text' %>
+          <div class = "btn"><%= f.submit "submit" %></div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
