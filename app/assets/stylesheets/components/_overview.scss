@@ -32,9 +32,18 @@
 .btn-link {
   background-color: orange;
   color: black;
+  margin-top: 10px;
 }
 
 .btn-link:hover {
   color: black;
   text-decoration: none;
+}
+
+.btn-link {
+  background-color: $main;
+}
+
+.btn input {
+  background-color: $main;
 }
