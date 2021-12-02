@@ -18,9 +18,9 @@
   color: $alert !important;
   background-color: $main;
   bottom: 100px;
-  opacity: 0;
-  transition: opacity 2.5s ease-in;
-  -webkit-transition: opacity 2.5s ease-in;
+  // -webkit-opacity: 0;
+  // transition: opacity 2.5s ease-in;
+  // -webkit-transition: opacity 2.5s ease-in;
  }
 
 body {
