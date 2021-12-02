@@ -7,10 +7,10 @@ export default class extends Controller {
 
 
   connect() {
-    if (this.searchTarget.value != '') {
-      this.openTarget.classList.add("active");
-      this.searchTarget.classList.add("open-bar");
-    }
+    this.searchTarget.value = ''
+    this.openTarget.classList.remove("active");
+    this.searchTarget.classList.remove("open-bar");
+
   }
 
   openSearch(e) {
@@ -23,7 +23,7 @@ export default class extends Controller {
         this.searchTarget.classList.add("open-bar");
         this.openTarget.classList.add("active");
 
-      }, 100);
+      }, 200);
       this.inputTarget.focus();
     }
     else {
@@ -32,7 +32,7 @@ export default class extends Controller {
         this.openTarget.classList.remove("active");
         setTimeout(() => {
           this.searchTarget.classList.add("hidden");
-        }, 100);
+        }, 200);
       }
       else {
         this.searchFormTarget.submit();
