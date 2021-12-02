@@ -42,3 +42,8 @@ a {
 .hidden {
   display: none;
 }
+
+a:hover {
+  color: $main;
+  text-decoration: none;
+}

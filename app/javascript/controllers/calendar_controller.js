@@ -5,9 +5,11 @@ export default class extends Controller {
   static targets = ['list', 'calendarr', 'logo', 'add', 'toRootLogo']
   static values = {open: Boolean}
 
-
-
-
+  connect() {
+    if (this.openValue) {
+      this.toggleCalendar();
+    }
+  }
 
   toggleCalendar() {
     this.calendarrTarget.classList.toggle("hidden");
