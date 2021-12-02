@@ -18,9 +18,15 @@
   color: $alert !important;
   background-color: $main;
   bottom: 100px;
-  // -webkit-opacity: 0;
-  // transition: opacity 2.5s ease-in;
-  // -webkit-transition: opacity 2.5s ease-in;
+
+  animation: fadeaway 2.5s ease-in;
+  -webkit-animation: fadeaway 2.5s ease-in;
+
+    @keyframes fadeaway {
+    0% { -webkit-opacity: 1; opacity: 1; }
+
+    100% { -webkit-opacity: 0;  opacity: 0; }
+  }
  }
 
 body {
