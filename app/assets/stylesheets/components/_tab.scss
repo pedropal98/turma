@@ -69,7 +69,7 @@
   }
 
   &.open {
-    height: 420px;
+    height: 440px;
 
     span {
       display: none;
@@ -87,8 +87,4 @@
     color: $main;
     text-decoration: none;
   }
-}
-
-@keyframes open {
-
 }
