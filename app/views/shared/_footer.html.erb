@@ -1,9 +1,8 @@
 <div class="footer-container">
-  <%if (params[:id]) then %>
+  <%if (params[:id])  %>
     <%= link_to "", event_path(params[:id]), class: "refresh" %>
   <% else %>
-    <div class="refresh">
-    </div>
+    <%= link_to "", events_path, class: "refresh" %>
   <% end %>
   <%= link_to new_event_path do %>
     <i class="fas fa-plus add"></i>
