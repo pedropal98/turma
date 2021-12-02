@@ -2,8 +2,9 @@
   <div class="messages"
         data-controller="event-subscription"
         data-event-subscription-event-id-value="<%= @event.id %>"
-        data-chatroom-target="messages">
-    <% @event.messages.reverse.each do |message| %>
+        data-chatroom-target="messages"
+        data-chat-target="messages">
+    <% @event.messages.each do |message| %>
       <%# viewName = message.user == current_user %>
       <%= render :partial => 'messages/message', :locals => { message: message } %>
     <% end %>
@@ -12,7 +13,7 @@
   </div>
 
   <%= simple_form_for([@event, @message], remote: true, data: { chatroom_target: 'formSubmit', chat_target: 'formUrl', action: 'submit->chatroom#submit' }) do |f| %>
-    <%= f.input :content,  label: false,  placeholder: "Message ##{@event.name}", autofocus: true %>
+    <%= f.input :content, label: false,  placeholder: "Message ##{@event.name}", autofocus: true, input_html: { data: { chatroom_target: 'input' } } %>
     <%= f.submit 'Send', class: "btn-primary form-send" %>
   <% end %>
 </div>
