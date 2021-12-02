@@ -1,13 +1,17 @@
+<% pen_invitations = current_user.invitations.where(status: nil).count %>
 <div class="navbar-container sticky">
   <% if user_signed_in? %>
+  <% invitations = pen_invitations > 0 ? 'new-invitations' : '' %>
     <div class = "avatar">
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill %>
+        <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill, class: invitations %>
       <% else %>
-        <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill %>
+        <%= image_tag "https://thumbs.dreamstime.com/b/icono-de-avatar-dj-estilo-simple-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-164370922.jpg", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height: 40, width: 40, crop: :fill, class: invitations %>
       <% end %>
       <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-        <%= link_to "Invitations", dashboards_path, class: "dropdown-item" %>
+        <%= link_to dashboards_path, class: "dropdown-item" do %>
+          invitations <span class="notification"><%= pen_invitations > 0 ? "(#{pen_invitations})" : "" %></span>
+        <% end %>
         <%= link_to "edit profile", edit_user_registration_path, class: "dropdown-item" %>
         <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>

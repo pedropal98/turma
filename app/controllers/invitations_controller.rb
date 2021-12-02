@@ -18,14 +18,14 @@ class InvitationsController < ApplicationController
   def update
     @invitation = Invitation.find(params[:id])
     if params[:status] == "true"
-      status = true
+      @invitation.update(status: true)
       flash[:alert] = "Invitation approved!"
+      redirect_to event_path(params[:event_id])
     else
-      status = false
+      @invitation.update(status: false)
       flash[:alert] = "Invitation declined!"
+      redirect_to  dashboards_path
     end
-    @invitation.update(status: status)
-    redirect_to event_path(params[:event_id])
 
   end
 
