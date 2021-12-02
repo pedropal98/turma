@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     start_date = params.fetch(:date, Date.today).to_date
     @events_month = Event.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week).where(user_id: current_user.id)
 
+
     if params[:query].present?
       sql_query = "name ILIKE :query OR category ILIKE :query"
       @events = Event.where(sql_query, query: "%#{params[:query]}%")
