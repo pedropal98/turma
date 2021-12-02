@@ -67,6 +67,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  -webkit-transform:scale(1.0);
 
 
 }
@@ -76,12 +77,12 @@
   right: 0.7em;
   border-radius: 100vh;
   transform: scaleX(0%);
-  transform-origin: right;
-  transition: transform 300ms linear;
+  -webkit-transform-origin: right;
+  -webkit-transition: transform 300ms linear;
 
   &.open-bar {
-    transform: scaleX(100%);
-    transform-origin: right;
-    transition: transform 300ms linear;
+    -webkit-transform: scaleX(100%);
+    -webkit-transform-origin: right;
+    -webkit-transition: transform 300ms linear;
   }
 }
