@@ -16,9 +16,9 @@
     <% count = @event.messages.where("read = false AND user_id != #{current_user.id}").count %>
     <% notification = count > 0 ? 'notification' : '' %>
 
-    <div class="wrapper <%= notification %>" data-controller="chat">
+    <div class="wrapper" data-controller="chat">
       <div class="close-btn mt-2 hidden" data-chat-target="close" data-action="click->chat#close">X</div>
-      <div class="tab" data-chat-target="tab" data-action="click->chat#open">
+      <div class="tab <%= notification %>" data-chat-target="tab" data-action="click->chat#open">
         <h3>Chat</h3>
         <span><%= @event.user.name %><%= @event.invitations.count > 0 ? " & #{@event.invitations[0].user.name}" : '' %> </span>
         <div class = "chat hidden" data-chat-target="content" >

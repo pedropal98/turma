@@ -9,7 +9,7 @@ class EventsController < ApplicationController
       @events = Event.where(sql_query, query: "%#{params[:query]}%")
     else
       @events = Event.where(user: current_user) + Event.joins(:invitations).where(invitations: { user: current_user }, invitations: { status: true } )
-
+      @events.uniq!
     end
 # find all events where user_id is current_user.id OR event.invitations.user_id = current_user.id
   end
