@@ -17,22 +17,7 @@
 }
 
 
-.search-icon {
-  color: $main;
-  font-size: 20px;
-  margin: 10px 15px;
-  z-index: 5;
 
-  &.active {
-    color: $alert;
-    margin-right: 1em;
-  }
-}
-
-.search-btn {
-  z-index: 50;
-  position: absolute;
-}
 .navbar-container::after {
   content: "";
   position: absolute;
@@ -51,37 +36,66 @@
   width: 70%;
 }
 
+.search_bar {
+  width: 100%;
+  position: absolute;
+  right: 0.7em;
+  top: -1.2em;
+  margin: 0 !important;
+
+  transform: scaleX(0%);
+  -webkit-transform: scaleX(0%);
+  transform-origin: right;
+  -webkit-transform-origin: right;
+  transition: transform 300ms linear;
+  -webkit-transition: -webkit-transform 300ms linear;
+
+
+  &.open-bar {
+    transform: scaleX(100%);
+    -webkit-transform: scaleX(100%);
+    transform-origin: right;
+    -webkit-transform-origin: right;
+    transition: transform 300ms linear;
+    -webkit-transition: -webkit-transform 300ms linear;
+  }
+
+  @media (max-width: 10em) {
+    margin-right: -2em;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  top: -1em;
+  color: $main;
+  font-size: 20px;
+  margin: 10px;
+  z-index: 5;
+
+  &.active {
+    color: $alert;
+    margin-right: 1em;
+  }
+}
+
+.search-btn {
+  z-index: 50;
+  position: absolute;
+}
 
 .search_btn {
   visibility: hidden;
 }
 
-.search_bar {
-  width: 100%;
-  display: flex;
-  justify-content: right;
-
-}
 
 .search {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
-
-
 }
 
 #query {
-  position: absolute;
-  right: 0.7em;
   border-radius: 100vh;
-  transform: scaleX(0%);
-  transform-origin: right;
-  transition: transform 300ms linear;
-
-  &.open-bar {
-    transform: scaleX(100%);
-    transform-origin: right;
-    transition: transform 300ms linear;
-  }
 }
