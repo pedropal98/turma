@@ -1,12 +1,19 @@
 <div class="footer-container">
+  <%if (params[:id]) then %>
+    <%= link_to "", event_path(params[:id]), class: "refresh" %>
+  <% else %>
+    <div class="refresh">
+    </div>
+  <% end %>
   <%= link_to new_event_path do %>
     <i class="fas fa-plus add"></i>
   <% end %>
-  <%if current_page?('/events') === true %>
+  <% if current_page?('/events') === true %>
     <i class="fas fa-cube logo-footer" data-calendar-target="logo" data-action="click->calendar#toggleCalendar"></i>
   <% else %>
-      <%= link_to root_path do %>
-        <i class="fas fa-cube logo-footer"></i>
-      <% end %>
+    <%= link_to root_path do %>
+      <i class="fas fa-cube logo-footer"></i>
+    <% end %>
   <% end %>
+
 </div>

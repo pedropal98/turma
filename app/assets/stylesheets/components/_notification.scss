@@ -1,3 +1,4 @@
 .notification {
-  color: $alert;
+  color: $alert !important;
+  border-color: $alert !important;
 }
