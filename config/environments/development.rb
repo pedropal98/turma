@@ -57,6 +57,7 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
   config.hosts << /[a-z0-9]+\.ngrok\.io/
+  config.hosts << /[a-z0-9\-]+\.ngrok\.io/
 
   #config.hosts << "b41c-213-61-167-82.ngrok.io"
   # Use an evented file watcher to asynchronously detect changes in source code,
