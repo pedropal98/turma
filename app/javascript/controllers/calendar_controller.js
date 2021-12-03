@@ -14,6 +14,7 @@ export default class extends Controller {
   toggleCalendar() {
     this.calendarrTarget.classList.toggle("hidden");
     this.listTarget.classList.toggle("hidden");
+
     this.logoTarget.classList.toggle("open");
   }
 

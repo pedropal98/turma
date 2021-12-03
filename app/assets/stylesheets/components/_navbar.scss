@@ -47,23 +47,44 @@
   right: 0.7em;
   top: -1.2em;
   margin: 0 !important;
-
-  transform: scaleX(0%);
-  -webkit-transform: scaleX(0%);
-  transform-origin: right;
-  -webkit-transform-origin: right;
-  transition: transform 300ms linear;
-  -webkit-transition: -webkit-transform 300ms linear;
+  opacity: 0;
+  display: none;
 
 
   &.open-bar {
+    display: block;
+
     transform: scaleX(100%);
     -webkit-transform: scaleX(100%);
     transform-origin: right;
     -webkit-transform-origin: right;
     transition: transform 300ms linear;
     -webkit-transition: -webkit-transform 300ms linear;
+
+    animation: opensearch 300ms ease-in forwards;
+    -webkit-animation: opensearch 300ms ease-in forwards;
   }
+
+   @keyframes opensearch {
+    0% {
+          opacity: 0;
+          transform: scaleX(0%);
+          -webkit-transform: scaleX(0%);
+          transform-origin: right;
+          -webkit-transform-origin: right;
+          transition: transform 300ms linear;
+          -webkit-transition: -webkit-transform 300ms linear;
+        }
+
+    100% {
+            opacity: 1;
+            transform: scaleX(100%);
+            -webkit-transform: scaleX(100%);
+            transform-origin: right;
+            -webkit-transform-origin: right;
+            transition: transform 300ms linear;
+            -webkit-transition: -webkit-transform 300ms linear; }
+    }
 
   @media (max-width: 10em) {
     margin-right: -2em;
@@ -77,11 +98,11 @@
   color: $main;
   font-size: 20px;
   margin: 10px;
+  margin-right: 1em;
   z-index: 5;
 
   &.active {
     color: $alert;
-    margin-right: 1em;
   }
 }
 
